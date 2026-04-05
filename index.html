@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eswar Adapa | Data Scientist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">EA<span>.</span></div>
+            <div class="preloader-bar"><div class="preloader-fill" id="preloaderFill"></div></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"><span class="cursor-text" id="cursorText"></span></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">EA<span class="logo-dot">.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="Eswar_Resume.pdf" class="nav-resume-btn" target="_blank">Resume <i class="fas fa-arrow-up-right-from-square"></i></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <canvas id="neuralCanvas"></canvas>
+        <!-- Floating Gradient Orbs (parallax layers) -->
+        <div class="orb orb-1" data-parallax="0.15"></div>
+        <div class="orb orb-2" data-parallax="0.25"></div>
+        <div class="orb orb-3" data-parallax="0.1"></div>
+        <div class="orb orb-4" data-parallax="0.2"></div>
+        <!-- Abstract Data Viz Decorations (boosted opacity + parallax) -->
+        <svg class="hero-deco hero-deco-scatter" data-parallax="0.08" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="80" r="6" fill="#ff7922" opacity="0.5"/>
+            <circle cx="120" cy="200" r="9" fill="#e06520" opacity="0.4"/>
+            <circle cx="200" cy="50" r="5" fill="#ff7922" opacity="0.55"/>
+            <circle cx="300" cy="150" r="7" fill="#e06520" opacity="0.45"/>
+            <circle cx="350" cy="300" r="8" fill="#ff7922" opacity="0.35"/>
+            <circle cx="80" cy="320" r="6" fill="#e06520" opacity="0.45"/>
+            <circle cx="250" cy="350" r="5" fill="#ff7922" opacity="0.5"/>
+            <circle cx="180" cy="280" r="10" fill="#e06520" opacity="0.3"/>
+            <circle cx="320" cy="60" r="4" fill="#ff7922" opacity="0.6"/>
+            <circle cx="150" cy="120" r="7" fill="#ba7866" opacity="0.35"/>
+            <!-- Connection lines -->
+            <line x1="50" y1="80" x2="120" y2="200" stroke="#e06520" stroke-width="1.2" opacity="0.2"/>
+            <line x1="120" y1="200" x2="200" y2="50" stroke="#ff7922" stroke-width="1.2" opacity="0.18"/>
+            <line x1="200" y1="50" x2="300" y2="150" stroke="#e06520" stroke-width="1.2" opacity="0.2"/>
+            <line x1="300" y1="150" x2="350" y2="300" stroke="#ff7922" stroke-width="1.2" opacity="0.18"/>
+            <line x1="80" y1="320" x2="250" y2="350" stroke="#e06520" stroke-width="1.2" opacity="0.2"/>
+            <line x1="150" y1="120" x2="50" y2="80" stroke="#ba7866" stroke-width="1.2" opacity="0.18"/>
+            <line x1="320" y1="60" x2="200" y2="50" stroke="#ff7922" stroke-width="1.2" opacity="0.2"/>
+            <line x1="180" y1="280" x2="80" y2="320" stroke="#e06520" stroke-width="1.2" opacity="0.18"/>
+        </svg>
+        <svg class="hero-deco hero-deco-nodes" data-parallax="0.12" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Node graph / neural net -->
+            <circle cx="50" cy="150" r="14" stroke="#e06520" stroke-width="2" fill="none" opacity="0.35"/>
+            <circle cx="150" cy="60" r="12" stroke="#ff7922" stroke-width="2" fill="none" opacity="0.3"/>
+            <circle cx="150" cy="240" r="12" stroke="#ff7922" stroke-width="2" fill="none" opacity="0.3"/>
+            <circle cx="250" cy="100" r="10" stroke="#e06520" stroke-width="2" fill="none" opacity="0.35"/>
+            <circle cx="250" cy="200" r="10" stroke="#ba7866" stroke-width="2" fill="none" opacity="0.3"/>
+            <circle cx="50" cy="150" r="5" fill="#e06520" opacity="0.45"/>
+            <circle cx="150" cy="60" r="4" fill="#ff7922" opacity="0.4"/>
+            <circle cx="150" cy="240" r="4" fill="#ff7922" opacity="0.4"/>
+            <circle cx="250" cy="100" r="4" fill="#e06520" opacity="0.45"/>
+            <circle cx="250" cy="200" r="4" fill="#ba7866" opacity="0.35"/>
+            <line x1="50" y1="150" x2="150" y2="60" stroke="#e06520" stroke-width="1.5" opacity="0.22"/>
+            <line x1="50" y1="150" x2="150" y2="240" stroke="#e06520" stroke-width="1.5" opacity="0.22"/>
+            <line x1="150" y1="60" x2="250" y2="100" stroke="#ff7922" stroke-width="1.5" opacity="0.18"/>
+            <line x1="150" y1="60" x2="250" y2="200" stroke="#ff7922" stroke-width="1.5" opacity="0.18"/>
+            <line x1="150" y1="240" x2="250" y2="100" stroke="#ff7922" stroke-width="1.5" opacity="0.18"/>
+            <line x1="150" y1="240" x2="250" y2="200" stroke="#ba7866" stroke-width="1.5" opacity="0.18"/>
+        </svg>
+        <svg class="hero-deco hero-deco-chart" data-parallax="0.06" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Mini bar chart -->
+            <rect x="10" y="70" width="18" height="50" rx="4" fill="#ff7922" opacity="0.2"/>
+            <rect x="38" y="40" width="18" height="80" rx="4" fill="#e06520" opacity="0.25"/>
+            <rect x="66" y="55" width="18" height="65" rx="4" fill="#ff7922" opacity="0.18"/>
+            <rect x="94" y="20" width="18" height="100" rx="4" fill="#e06520" opacity="0.28"/>
+            <rect x="122" y="45" width="18" height="75" rx="4" fill="#ba7866" opacity="0.2"/>
+            <rect x="150" y="10" width="18" height="110" rx="4" fill="#ff7922" opacity="0.25"/>
+            <rect x="178" y="35" width="18" height="85" rx="4" fill="#e06520" opacity="0.18"/>
+        </svg>
+        <!-- E: Floating Code Snippets Background -->
+        <div class="floating-code floating-code-1" aria-hidden="true">
+            <pre>from langchain import ChatOpenAI
+llm = ChatOpenAI(model="gpt-4")
+chain = prompt | llm | parser
+result = chain.invoke(query)</pre>
+        </div>
+        <div class="floating-code floating-code-2" aria-hidden="true">
+            <pre>graph.add_node("search", agent)
+graph.add_edge("search", "analyze")
+app = graph.compile()
+response = app.invoke(state)</pre>
+        </div>
+        <div class="floating-code floating-code-3" aria-hidden="true">
+            <pre>embeddings = model.encode(texts)
+index = faiss.IndexFlatIP(768)
+index.add(embeddings)
+D, I = index.search(query, k=5)</pre>
+        </div>
+        <div class="floating-code floating-code-4" aria-hidden="true">
+            <pre>MATCH (p:POI)-[:NEAR]->(q:POI)
+WHERE p.country = "IN"
+RETURN p.name, count(q)
+ORDER BY count(q) DESC</pre>
+        </div>
+        <div class="floating-code floating-code-5" aria-hidden="true">
+            <pre>spark.read.parquet("s3://data/")
+  .filter(col("score") > 0.9)
+  .groupBy("region")
+  .agg(count("poi_id"))</pre>
+        </div>
+
+        <!-- B: 3D Knowledge Graph Canvas -->
+        <canvas id="knowledgeGraph3D"></canvas>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Available for opportunities
+            </div>
+            <h1 class="hero-name" id="heroName">
+                <span class="split-line"><span class="split-word">Hi,</span> <span class="split-word">I'm</span></span>
+                <span class="split-line"><span class="split-word gradient-text">Eswar</span> <span class="split-word gradient-text">Adapa</span></span>
+            </h1>
+            <div class="hero-title-wrapper">
+                <span class="hero-title-static">Data Scientist</span>
+                <span class="hero-title-divider">|</span>
+                <span class="hero-title-dynamic" id="typingText"></span>
+                <span class="typing-cursor">|</span>
+            </div>
+            <p class="hero-description">
+                Building scalable, production-grade ML systems. From scaling pipelines to
+                <span class="highlight">220M+ records</span> to architecting
+                <span class="highlight">multi-agent AI systems</span> serving 5000+ concurrent users.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="220">0</span><span class="stat-suffix">M+</span>
+                    <span class="stat-label">Records Processed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="10">0</span><span class="stat-suffix">x</span>
+                    <span class="stat-label">Throughput Gain</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5000">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Concurrent Users</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="96">0</span><span class="stat-suffix">.7%</span>
+                    <span class="stat-label">Model Accuracy</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="#experience" class="btn btn-primary" data-magnetic>
+                    View My Work <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-outline" data-magnetic>
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+        <!-- Live Code Terminal -->
+        <div class="hero-terminal fade-in" id="heroTerminal">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span class="dot-red"></span>
+                    <span class="dot-yellow"></span>
+                    <span class="dot-green"></span>
+                </div>
+                <span class="terminal-title">eswar_ai.py</span>
+            </div>
+            <div class="terminal-body">
+                <pre><code id="terminalCode"></code></pre>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Marquee Ticker -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>Machine Learning</span><span class="marquee-dot"></span>
+                <span>Deep Learning</span><span class="marquee-dot"></span>
+                <span>NLP</span><span class="marquee-dot"></span>
+                <span>Generative AI</span><span class="marquee-dot"></span>
+                <span>LangGraph</span><span class="marquee-dot"></span>
+                <span>Neo4j</span><span class="marquee-dot"></span>
+                <span>PySpark</span><span class="marquee-dot"></span>
+                <span>Multi-Agent Systems</span><span class="marquee-dot"></span>
+                <span>Knowledge Graphs</span><span class="marquee-dot"></span>
+                <span>RAG</span><span class="marquee-dot"></span>
+                <span>FastAPI</span><span class="marquee-dot"></span>
+                <span>Transformers</span><span class="marquee-dot"></span>
+                <span>Docker</span><span class="marquee-dot"></span>
+                <span>Kubernetes</span><span class="marquee-dot"></span>
+                <span>AWS</span><span class="marquee-dot"></span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span>Machine Learning</span><span class="marquee-dot"></span>
+                <span>Deep Learning</span><span class="marquee-dot"></span>
+                <span>NLP</span><span class="marquee-dot"></span>
+                <span>Generative AI</span><span class="marquee-dot"></span>
+                <span>LangGraph</span><span class="marquee-dot"></span>
+                <span>Neo4j</span><span class="marquee-dot"></span>
+                <span>PySpark</span><span class="marquee-dot"></span>
+                <span>Multi-Agent Systems</span><span class="marquee-dot"></span>
+                <span>Knowledge Graphs</span><span class="marquee-dot"></span>
+                <span>RAG</span><span class="marquee-dot"></span>
+                <span>FastAPI</span><span class="marquee-dot"></span>
+                <span>Transformers</span><span class="marquee-dot"></span>
+                <span>Docker</span><span class="marquee-dot"></span>
+                <span>Kubernetes</span><span class="marquee-dot"></span>
+                <span>AWS</span><span class="marquee-dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper (shrinking box effect) -->
+    <div class="main-content" id="mainContent">
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">01.</span> About Me
+            </h2>
+            <div class="about-grid">
+                <div class="about-image-wrapper fade-in">
+                    <div class="about-image-container">
+                        <img src="eswar-profile.jpg" alt="Eswar Adapa" class="about-image">
+                        <div class="image-border"></div>
+                    </div>
+                    <div class="about-socials">
+                        <a href="https://github.com/Eswar-09" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/eswar-adapa-311077253/" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:eswaradapa90@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="about-text fade-in">
+                    <p class="about-intro">
+                        I'm a <span class="highlight">Data Scientist</span> based in Mumbai, India, with a passion for
+                        solving complex data problems and delivering scalable, production-grade systems.
+                    </p>
+                    <p>
+                        My journey spans across <span class="highlight">Machine Learning</span>,
+                        <span class="highlight">Large-Scale Data Engineering</span>,
+                        <span class="highlight">Graph Systems</span>, and <span class="highlight">Generative AI</span>.
+                        I've led initiatives that scaled POI ingestion pipelines from 23M to 220M records,
+                        reduced geospatial processing time from 1 week to 2.5 hours, and built multi-agent
+                        AI systems supporting thousands of concurrent users.
+                    </p>
+                    <p>
+                        I graduated with a B.Tech (Honors) in Electronics and Communication Engineering from
+                        IIIT Sricity with a CGPA of 8.02, and have been recognized as
+                        <span class="highlight">Best Employee</span> at Infinite Analytics.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Mumbai, India</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-building"></i>
+                            <span>Infinite Analytics</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>IIIT Sricity, B.Tech (Honors)</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-award"></i>
+                            <span>Best Employee Award</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">02.</span> Skills & Expertise
+            </h2>
+            <div class="skills-grid stagger-in">
+                <div class="skill-card fade-in" data-delay="0">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">Embedded C</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in" data-delay="100">
+                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                    <h3>ML & AI</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Generative AI</span>
+                        <span class="tag">Transformers</span>
+                        <span class="tag">BERT</span>
+                        <span class="tag">Recommender Systems</span>
+                        <span class="tag">OCR</span>
+                        <span class="tag">Image Processing</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in" data-delay="200">
+                    <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                    <h3>LLM Systems</h3>
+                    <div class="skill-tags">
+                        <span class="tag">LangChain</span>
+                        <span class="tag">LangGraph</span>
+                        <span class="tag">RAG</span>
+                        <span class="tag">Multi-Agent Systems</span>
+                        <span class="tag">Prompt Engineering</span>
+                        <span class="tag">Model Routing</span>
+                        <span class="tag">Guardrails</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in" data-delay="300">
+                    <div class="skill-icon"><i class="fas fa-server"></i></div>
+                    <h3>Data & Backend</h3>
+                    <div class="skill-tags">
+                        <span class="tag">PySpark</span>
+                        <span class="tag">pandas</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">REST APIs</span>
+                        <span class="tag">Pydantic</span>
+                        <span class="tag">WebSockets</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in" data-delay="400">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h3>Databases</h3>
+                    <div class="skill-tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">Qdrant</span>
+                        <span class="tag">FAISS</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in" data-delay="500">
+                    <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Graph & Spatial</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Neo4j</span>
+                        <span class="tag">GDS</span>
+                        <span class="tag">Apache Sedona</span>
+                        <span class="tag">H3 Indexing</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in" data-delay="600">
+                    <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="tag">AWS</span>
+                        <span class="tag">EC2</span>
+                        <span class="tag">S3</span>
+                        <span class="tag">EKS</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">Jenkins</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Dashboard Strip -->
+    <section class="section dashboard-strip" id="dashboard">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number"></span> Impact At a Glance
+            </h2>
+            <div class="dashboard-grid fade-in">
+                <!-- Mini Line Chart -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <span class="dash-label">Model Accuracy</span>
+                        <span class="dash-value dash-up"><i class="fas fa-arrow-up"></i> 96.7%</span>
+                    </div>
+                    <svg class="dash-chart" viewBox="0 0 200 60" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#ff7922" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="#ff7922" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                        <path class="dash-area" d="M0,55 L30,45 L60,48 L90,30 L120,25 L150,15 L180,10 L200,5 L200,60 L0,60 Z" fill="url(#lineGrad)"/>
+                        <polyline class="dash-line" points="0,55 30,45 60,48 90,30 120,25 150,15 180,10 200,5" fill="none" stroke="#ff7922" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="200" cy="5" r="4" fill="#ff7922" class="dash-pulse"/>
+                    </svg>
+                    <div class="dash-footer">83% <i class="fas fa-arrow-right"></i> 96.7% accuracy</div>
+                </div>
+
+                <!-- Donut Chart -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <span class="dash-label">Pipeline Coverage</span>
+                        <span class="dash-value dash-up"><i class="fas fa-arrow-up"></i> 18 countries</span>
+                    </div>
+                    <div class="donut-container">
+                        <svg class="donut-chart" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(17,17,17,0.06)" stroke-width="10"/>
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#ff7922" stroke-width="10"
+                                stroke-dasharray="226.2" stroke-dashoffset="226.2"
+                                stroke-linecap="round" transform="rotate(-90 50 50)" class="donut-fill"/>
+                        </svg>
+                        <div class="donut-center">
+                            <span class="donut-number">220M</span>
+                            <span class="donut-sub">POIs</span>
+                        </div>
+                    </div>
+                    <div class="dash-footer">Scaled from 23M to 220M records</div>
+                </div>
+
+                <!-- Bar Chart -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <span class="dash-label">Response Time</span>
+                        <span class="dash-value dash-down"><i class="fas fa-arrow-down"></i> 60% faster</span>
+                    </div>
+                    <div class="bar-chart">
+                        <div class="bar-group">
+                            <div class="bar bar-before" style="--bar-height: 90%;"><span>3-5s</span></div>
+                            <div class="bar-label">Before</div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar bar-after" style="--bar-height: 35%;"><span>1-2s</span></div>
+                            <div class="bar-label">After</div>
+                        </div>
+                    </div>
+                    <div class="dash-footer">Sherlock AI response latency</div>
+                </div>
+
+                <!-- Metric Card -->
+                <div class="dash-card dash-card-highlight">
+                    <div class="dash-card-header">
+                        <span class="dash-label">Throughput</span>
+                        <span class="dash-value dash-up"><i class="fas fa-bolt"></i> 10x</span>
+                    </div>
+                    <div class="metric-big">
+                        <span class="metric-number">100</span>
+                        <span class="metric-unit">req/s</span>
+                    </div>
+                    <div class="metric-bar-track">
+                        <div class="metric-bar-fill"></div>
+                    </div>
+                    <div class="dash-footer">5000+ concurrent users supported</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">03.</span> Experience
+            </h2>
+
+            <div class="timeline">
+                <!-- Infinite Analytics -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Data Scientist</h3>
+                                <p class="company">Infinite Analytics</p>
+                            </div>
+                            <span class="timeline-date">Feb 2024 &mdash; Present</span>
+                        </div>
+
+                        <div class="project-card">
+                            <h4><i class="fas fa-database"></i> POI Ingestion & Data Scaling</h4>
+                            <ul>
+                                <li>Unified POI crawling & ingestion pipelines using RabbitMQ, Redis, and MongoDB, scaling from <strong>23M to 220M POIs</strong> across 18 countries</li>
+                                <li>Evolved ML architecture from hierarchical LightGBM cascade (51 models) to a unified <strong>DistilBERT transformer</strong> achieving <strong>96.7% accuracy</strong> at 0.005s inference latency</li>
+                                <li>Accelerated Point-to-Polygon mapping with Apache Sedona, reducing runtime from <strong>1 week to 2.5 hours</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="project-card">
+                            <h4><i class="fas fa-robot"></i> Sherlock AI: Multi-Agent Intelligence Platform</h4>
+                            <ul>
+                                <li>Migrated from monolithic LangChain to <strong>LangGraph multi-agent StateGraph</strong>, achieving <strong>10x throughput</strong> (100 req/s) and 60% faster responses</li>
+                                <li>Built 3-phase onboarding agent with checkpoint-based recovery, WebSocket interface, supporting <strong>5000+ concurrent users</strong></li>
+                                <li>Designed <strong>multi-layer RAG</strong>: Qdrant (schema), FAISS (fuzzy brand match), ChromaDB (POI resolution) with LLM factory supporting OpenAI, Anthropic, Cohere, Google</li>
+                                <li>Implemented plan-aware guardrails with action classification, reducing hallucinations by separating reasoning vs execution</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-card">
+                            <h4><i class="fas fa-project-diagram"></i> POI Knowledge Graph</h4>
+                            <ul>
+                                <li>Built and optimized <strong>Neo4j Knowledge Graph</strong> integrating POI, visitation, behaviors, WBI, reviews, and touchpoints data</li>
+                                <li>Implemented graph embeddings using <strong>Node2Vec, FastRP, HashGNN, and GraphSAGE</strong></li>
+                                <li>Built similarity relationships using Neo4j GDS KNN for downstream recommendation and segmentation models</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DRDO -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Research Intern</h3>
+                                <p class="company">DRDO (Defence Research and Development Organisation)</p>
+                            </div>
+                            <span class="timeline-date">May 2023 &mdash; Aug 2023</span>
+                        </div>
+                        <div class="project-card">
+                            <h4><i class="fas fa-wave-square"></i> sEMG Signal Analysis & Gait Modeling</h4>
+                            <ul>
+                                <li>Improved preprocessing and symbolization of sEMG data, yielding a <strong>20% increase</strong> in data quality</li>
+                                <li>Trained deep learning models on IMU and sEMG walking data to classify <strong>7 gait phases with 92% accuracy</strong></li>
+                                <li>Applied Symbolic Transfer Entropy (sTE) to study muscle interactions, identifying a <strong>25% rise</strong> in inter-muscle information transfer linked to walking speed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Internship Manager</h3>
+                                <p class="company">BITS Pilani Collaboration</p>
+                            </div>
+                            <span class="timeline-date">Jun 2025 &mdash; Jul 2025</span>
+                        </div>
+                        <div class="project-card">
+                            <h4><i class="fas fa-users"></i> Scrum Master & Project Manager</h4>
+                            <ul>
+                                <li>Managed a cohort of <strong>5 BITS Pilani interns</strong> during an 8-week program</li>
+                                <li>Directed task allocation, sprint planning, and progress tracking</li>
+                                <li>Guided interns on technical and workflow best practices</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="section publications" id="publications">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">04.</span> Publications
+            </h2>
+            <a href="https://ieeexplore.ieee.org/abstract/document/10317229/" target="_blank" class="publication-card fade-in" style="text-decoration:none;color:inherit;">
+                <div class="pub-icon"><i class="fas fa-file-lines"></i></div>
+                <div class="pub-content">
+                    <span class="pub-venue">APSIPA'23 &mdash; IEEE</span>
+                    <h3>Fatigue Classification and Onset Estimation Using sEMG Signals During Strength Training</h3>
+                    <p class="pub-date">Aug 2022 &mdash; Apr 2023</p>
+                    <p>Studied fatigue classification and onset estimation using sEMG signals during strength training.
+                    Achieved <strong>86% classification accuracy</strong> and coined a Machine Learning model with
+                    Majority Windowing, achieving a <strong>12% estimation error</strong>.</p>
+                    <div class="pub-tags">
+                        <span class="tag">sEMG</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Signal Processing</span>
+                        <span class="tag">IEEE</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section achievements" id="achievements">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">05.</span> Achievements
+            </h2>
+            <div class="achievements-grid stagger-in">
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Best Employee Award</h3>
+                    <p class="achievement-period">Feb 2024 &mdash; May 2025</p>
+                    <p>Recognized for notable contributions to Data Engineering, Knowledge Graph development, and GenAI integration across multiple projects at Infinite Analytics.</p>
+                </div>
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon"><i class="fas fa-medal"></i></div>
+                    <h3>Climate Change Grand Challenge</h3>
+                    <p class="achievement-period">Nasscom & Telangana Government</p>
+                    <p>Ranked among the <strong>top 40 out of 7000+ teams</strong> nationwide. Built a predictive framework for heatwave events and Air Quality Index in Tier-2 cities.</p>
+                </div>
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon"><i class="fas fa-users-gear"></i></div>
+                    <h3>IEEE Secretary</h3>
+                    <p class="achievement-period">IIIT Sricity &mdash; Mar 2023 &mdash; Apr 2024</p>
+                    <p>Coordinated travel and lodging for <strong>100+ attendees</strong> at the ESDC Conference. Managed logistics for an event rated <strong>4.5/5</strong> by participants.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section education" id="education">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">06.</span> Education
+            </h2>
+            <div class="education-card fade-in">
+                <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="edu-content">
+                    <h3>Indian Institute of Information Technology, Sricity</h3>
+                    <p class="edu-degree">B.Tech (Honors), Electronics and Communication Engineering</p>
+                    <p class="edu-date">Dec 2020 &mdash; Apr 2024</p>
+                    <div class="edu-gpa">
+                        <span class="gpa-label">CGPA</span>
+                        <span class="gpa-value">8.02</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">07.</span> Get In Touch
+            </h2>
+            <div class="contact-content fade-in">
+                <p class="contact-text">
+                    I'm always open to discussing new projects, opportunities, or collaborations
+                    in data science and AI. Feel free to reach out!
+                </p>
+                <div class="contact-links stagger-in">
+                    <a href="mailto:eswaradapa90@gmail.com" class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">eswaradapa90@gmail.com</span>
+                    </a>
+                    <a href="tel:+916309925636" class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">+91 6309925636</span>
+                    </a>
+                    <a href="https://github.com/Eswar-09" target="_blank" class="contact-card">
+                        <i class="fab fa-github"></i>
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">Eswar-09</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/eswar-adapa-311077253/" target="_blank" class="contact-card">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">Eswar Adapa</span>
+                    </a>
+                </div>
+                <a href="mailto:eswaradapa90@gmail.com" class="btn btn-primary btn-lg" data-magnetic>
+                    Say Hello <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & Built by <span class="gradient-text">Eswar Adapa</span></p>
+            <p class="footer-sub">&copy; 2026. All rights reserved.</p>
+        </div>
+    </footer>
+
+    </div><!-- end .main-content -->
+
+    <!-- C: AI Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <!-- Toast Notification -->
+        <div class="chat-toast" id="chatToast">
+            <div class="chat-toast-avatar"><i class="fas fa-robot"></i></div>
+            <div class="chat-toast-text">
+                <strong>Eswar's AI Assistant</strong>
+                Hey! Ask me anything about Eswar's work, skills, or projects!
+            </div>
+            <button class="chat-toast-close" id="chatToastClose" aria-label="Close"><i class="fas fa-times"></i></button>
+        </div>
+        <button class="chat-toggle" id="chatToggle" data-magnetic aria-label="Chat with AI">
+            <i class="fas fa-robot"></i>
+            <span class="chat-toggle-label">Chat with AI</span>
+        </button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-header-left">
+                    <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                    <div>
+                        <span class="chat-name">Eswar's AI</span>
+                        <span class="chat-status"><span class="badge-dot"></span> Online</span>
+                    </div>
+                </div>
+                <button class="chat-close" id="chatClose" aria-label="Close chat"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-msg chat-bot">
+                    <p>Hey! I'm Eswar's AI assistant. Ask me anything about his work, skills, or experience!</p>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <div class="chat-suggestions" id="chatSuggestions">
+                    <button class="chat-suggestion" data-q="What does Eswar do?">What does Eswar do?</button>
+                    <button class="chat-suggestion" data-q="Tell me about Sherlock AI">Sherlock AI?</button>
+                    <button class="chat-suggestion" data-q="What is his tech stack?">Tech stack?</button>
+                    <button class="chat-suggestion" data-q="How to contact Eswar?">Contact?</button>
+                </div>
+                <div class="chat-input-row">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Ask about Eswar..." />
+                    <button class="chat-send" id="chatSend" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
