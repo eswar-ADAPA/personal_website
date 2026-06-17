@@ -194,3 +194,31 @@ revalidates; CSS/JS bust via the `?v=N` bump on each deploy).
   always use the node-based path (see DEPLOYMENT.md).
 - **`_backup/`** holds the original single-file `index.html` / `styles.css` /
   `script.js` from before the modular refactor. Not deployed.
+
+---
+
+## 10. Analytics (GA4)
+
+Visitor stats are tracked with **Google Analytics 4**, via a small `gtag`
+snippet in the `<head>` of `index.html`.
+
+- **Measurement ID:** `G-K16QQ5PMH8`
+- **Data stream:** a dedicated Firebase web app **"Eswar Portfolio"** under the
+  `orbit-bike-tax` project — kept separate from the Orbit apps so the portfolio's
+  stats are isolated.
+- **What it captures:** unique visitors, page views, sessions, countries, device
+  type, traffic sources, and live (realtime) users.
+
+**Where to view:**
+- Google Analytics → https://analytics.google.com → property under the
+  `orbit-bike-tax` account → stream "Eswar Portfolio".
+- Or Firebase Console → project `orbit-bike-tax` → **Analytics**.
+- **Reports → Realtime** shows current visitors instantly; full daily reports
+  populate in ~24–48 h.
+
+**Notes:**
+- Tracking only counts from when the tag went live — there is no historical data
+  from before that.
+- GA4 uses cookies. No consent banner is installed; add one if strict GDPR
+  compliance is needed for EU visitors.
+- To change/disable: edit or remove the GA snippet in `index.html`'s `<head>`.
