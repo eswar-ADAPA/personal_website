@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eswar Adapa | Data Scientist / AI Engineer</title>
+    <link rel="stylesheet" href="css/base.css?v=8">
+    <link rel="stylesheet" href="css/chrome.css?v=8">
+    <link rel="stylesheet" href="css/hero.css?v=8">
+    <link rel="stylesheet" href="css/sections.css?v=8">
+    <link rel="stylesheet" href="css/chat.css?v=8">
+    <link rel="stylesheet" href="css/responsive.css?v=8">
+    <link rel="stylesheet" href="css/startup.css?v=8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body data-mode="technical">
+    <!-- Preloader: name reveal + curtain -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-name">
+                <span class="pl-name" aria-label="Eswar Adapa">
+                    <span class="pl-w"><span class="pl-cap">E</span><span class="pl-rest">swar</span></span>
+                    <span class="pl-w"><span class="pl-cap">A</span><span class="pl-rest">dapa</span></span><span class="pl-enddot">.</span>
+                </span>
+            </div>
+            <div class="preloader-tag">Engineering intelligence. Building ventures.</div>
+            <div class="preloader-bar"><div class="preloader-fill" id="preloaderFill"></div></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"><span class="cursor-text" id="cursorText"></span></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">EA<span class="logo-dot">.</span></a>
+
+            <!-- Mode Toggle: Technical / Startup -->
+            <div class="mode-toggle" id="modeToggle" role="tablist" aria-label="Site mode">
+                <span class="mode-slider" id="modeSlider"></span>
+                <button class="mode-btn active" data-mode="technical" role="tab"><i class="fas fa-code"></i> Technical</button>
+                <button class="mode-btn" data-mode="startup" role="tab"><i class="fas fa-rocket"></i> Startup</button>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li data-world="technical"><a href="#about">About</a></li>
+                <li data-world="technical"><a href="#skills">Skills</a></li>
+                <li data-world="technical"><a href="#experience">Experience</a></li>
+                <li data-world="technical"><a href="#publications">Publications</a></li>
+                <li data-world="technical"><a href="#achievements">Achievements</a></li>
+                <li data-world="startup"><a href="#builder">Mindset</a></li>
+                <li data-world="startup"><a href="#ventures">Ventures</a></li>
+                <li data-world="startup"><a href="#timeline">Timeline</a></li>
+                <li data-world="startup"><a href="#journey">Deep Dives</a></li>
+                <li data-world="startup"><a href="#lessons">Lessons</a></li>
+                <li data-world="startup"><a href="#people">People</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="assets/docs/Eswar_Adapa_Resume_GenAI.pdf" class="nav-resume-btn" target="_blank">Resume <i class="fas fa-arrow-up-right-from-square"></i></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero" data-world="technical">
+        <canvas id="neuralCanvas"></canvas>
+        <!-- Floating Gradient Orbs (parallax layers) -->
+        <div class="orb orb-1" data-parallax="0.15"></div>
+        <div class="orb orb-2" data-parallax="0.25"></div>
+        <div class="orb orb-3" data-parallax="0.1"></div>
+        <div class="orb orb-4" data-parallax="0.2"></div>
+        <!-- Abstract Data Viz Decorations (boosted opacity + parallax) -->
+        <svg class="hero-deco hero-deco-scatter" data-parallax="0.08" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="80" r="6" fill="#ff7922" opacity="0.5"/>
+            <circle cx="120" cy="200" r="9" fill="#e06520" opacity="0.4"/>
+            <circle cx="200" cy="50" r="5" fill="#ff7922" opacity="0.55"/>
+            <circle cx="300" cy="150" r="7" fill="#e06520" opacity="0.45"/>
+            <circle cx="350" cy="300" r="8" fill="#ff7922" opacity="0.35"/>
+            <circle cx="80" cy="320" r="6" fill="#e06520" opacity="0.45"/>
+            <circle cx="250" cy="350" r="5" fill="#ff7922" opacity="0.5"/>
+            <circle cx="180" cy="280" r="10" fill="#e06520" opacity="0.3"/>
+            <circle cx="320" cy="60" r="4" fill="#ff7922" opacity="0.6"/>
+            <circle cx="150" cy="120" r="7" fill="#ba7866" opacity="0.35"/>
+            <!-- Connection lines -->
+            <line x1="50" y1="80" x2="120" y2="200" stroke="#e06520" stroke-width="1.2" opacity="0.2"/>
+            <line x1="120" y1="200" x2="200" y2="50" stroke="#ff7922" stroke-width="1.2" opacity="0.18"/>
+            <line x1="200" y1="50" x2="300" y2="150" stroke="#e06520" stroke-width="1.2" opacity="0.2"/>
+            <line x1="300" y1="150" x2="350" y2="300" stroke="#ff7922" stroke-width="1.2" opacity="0.18"/>
+            <line x1="80" y1="320" x2="250" y2="350" stroke="#e06520" stroke-width="1.2" opacity="0.2"/>
+            <line x1="150" y1="120" x2="50" y2="80" stroke="#ba7866" stroke-width="1.2" opacity="0.18"/>
+            <line x1="320" y1="60" x2="200" y2="50" stroke="#ff7922" stroke-width="1.2" opacity="0.2"/>
+            <line x1="180" y1="280" x2="80" y2="320" stroke="#e06520" stroke-width="1.2" opacity="0.18"/>
+        </svg>
+        <svg class="hero-deco hero-deco-nodes" data-parallax="0.12" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Node graph / neural net -->
+            <circle cx="50" cy="150" r="14" stroke="#e06520" stroke-width="2" fill="none" opacity="0.35"/>
+            <circle cx="150" cy="60" r="12" stroke="#ff7922" stroke-width="2" fill="none" opacity="0.3"/>
+            <circle cx="150" cy="240" r="12" stroke="#ff7922" stroke-width="2" fill="none" opacity="0.3"/>
+            <circle cx="250" cy="100" r="10" stroke="#e06520" stroke-width="2" fill="none" opacity="0.35"/>
+            <circle cx="250" cy="200" r="10" stroke="#ba7866" stroke-width="2" fill="none" opacity="0.3"/>
+            <circle cx="50" cy="150" r="5" fill="#e06520" opacity="0.45"/>
+            <circle cx="150" cy="60" r="4" fill="#ff7922" opacity="0.4"/>
+            <circle cx="150" cy="240" r="4" fill="#ff7922" opacity="0.4"/>
+            <circle cx="250" cy="100" r="4" fill="#e06520" opacity="0.45"/>
+            <circle cx="250" cy="200" r="4" fill="#ba7866" opacity="0.35"/>
+            <line x1="50" y1="150" x2="150" y2="60" stroke="#e06520" stroke-width="1.5" opacity="0.22"/>
+            <line x1="50" y1="150" x2="150" y2="240" stroke="#e06520" stroke-width="1.5" opacity="0.22"/>
+            <line x1="150" y1="60" x2="250" y2="100" stroke="#ff7922" stroke-width="1.5" opacity="0.18"/>
+            <line x1="150" y1="60" x2="250" y2="200" stroke="#ff7922" stroke-width="1.5" opacity="0.18"/>
+            <line x1="150" y1="240" x2="250" y2="100" stroke="#ff7922" stroke-width="1.5" opacity="0.18"/>
+            <line x1="150" y1="240" x2="250" y2="200" stroke="#ba7866" stroke-width="1.5" opacity="0.18"/>
+        </svg>
+        <svg class="hero-deco hero-deco-chart" data-parallax="0.06" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Mini bar chart -->
+            <rect x="10" y="70" width="18" height="50" rx="4" fill="#ff7922" opacity="0.2"/>
+            <rect x="38" y="40" width="18" height="80" rx="4" fill="#e06520" opacity="0.25"/>
+            <rect x="66" y="55" width="18" height="65" rx="4" fill="#ff7922" opacity="0.18"/>
+            <rect x="94" y="20" width="18" height="100" rx="4" fill="#e06520" opacity="0.28"/>
+            <rect x="122" y="45" width="18" height="75" rx="4" fill="#ba7866" opacity="0.2"/>
+            <rect x="150" y="10" width="18" height="110" rx="4" fill="#ff7922" opacity="0.25"/>
+            <rect x="178" y="35" width="18" height="85" rx="4" fill="#e06520" opacity="0.18"/>
+        </svg>
+        <!-- E: Floating Code Snippets Background -->
+        <div class="floating-code floating-code-1" aria-hidden="true">
+            <pre>from langchain import ChatOpenAI
+llm = ChatOpenAI(model="gpt-4")
+chain = prompt | llm | parser
+result = chain.invoke(query)</pre>
+        </div>
+        <div class="floating-code floating-code-2" aria-hidden="true">
+            <pre>graph.add_node("search", agent)
+graph.add_edge("search", "analyze")
+app = graph.compile()
+response = app.invoke(state)</pre>
+        </div>
+        <div class="floating-code floating-code-3" aria-hidden="true">
+            <pre>embeddings = model.encode(texts)
+index = faiss.IndexFlatIP(768)
+index.add(embeddings)
+D, I = index.search(query, k=5)</pre>
+        </div>
+        <div class="floating-code floating-code-4" aria-hidden="true">
+            <pre>MATCH (p:POI)-[:NEAR]->(q:POI)
+WHERE p.country = "IN"
+RETURN p.name, count(q)
+ORDER BY count(q) DESC</pre>
+        </div>
+        <div class="floating-code floating-code-5" aria-hidden="true">
+            <pre>spark.read.parquet("s3://data/")
+  .filter(col("score") > 0.9)
+  .groupBy("region")
+  .agg(count("poi_id"))</pre>
+        </div>
+
+        <!-- B: 3D Knowledge Graph Canvas -->
+        <canvas id="knowledgeGraph3D"></canvas>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Available for opportunities
+            </div>
+            <h1 class="hero-name" id="heroName">
+                <span class="split-line"><span class="split-word">Hi,</span> <span class="split-word">I'm</span></span>
+                <span class="split-line"><span class="split-word gradient-text">Eswar</span> <span class="split-word gradient-text">Adapa</span></span>
+            </h1>
+            <div class="hero-title-wrapper">
+                <span class="hero-title-static">Data Scientist</span>
+                <span class="hero-title-divider">|</span>
+                <span class="hero-title-dynamic" id="typingText"></span>
+                <span class="typing-cursor">|</span>
+            </div>
+            <p class="hero-description">
+                Building scalable, production-grade AI systems. From scaling pipelines to
+                <span class="highlight">220M+ records</span> across 38 countries to a
+                <span class="highlight">multi-agent operations platform</span> and an 83M+ node knowledge graph.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="220">0</span><span class="stat-suffix">M+</span>
+                    <span class="stat-label">Records Processed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="10">0</span><span class="stat-suffix">x</span>
+                    <span class="stat-label">Throughput Gain</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="38">0</span><span class="stat-suffix"></span>
+                    <span class="stat-label">Countries Covered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="86">0</span><span class="stat-suffix">.7%</span>
+                    <span class="stat-label">Model Accuracy</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="#experience" class="btn btn-primary" data-magnetic>
+                    View My Work <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-outline" data-magnetic>
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+        <!-- Live Code Terminal -->
+        <div class="hero-terminal fade-in" id="heroTerminal">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span class="dot-red"></span>
+                    <span class="dot-yellow"></span>
+                    <span class="dot-green"></span>
+                </div>
+                <span class="terminal-title">eswar_ai.py</span>
+            </div>
+            <div class="terminal-body">
+                <pre><code id="terminalCode"></code></pre>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- ============ STARTUP HERO ============ -->
+    <section class="hero startup-hero" id="startupHero" data-world="startup">
+        <canvas id="ventureCanvas"></canvas>
+        <!-- Indigo gradient orbs -->
+        <div class="orb s-orb-1" data-parallax="0.15"></div>
+        <div class="orb s-orb-2" data-parallax="0.25"></div>
+        <div class="orb s-orb-3" data-parallax="0.1"></div>
+        <div class="orb s-orb-4" data-parallax="0.2"></div>
+
+        <!-- Floating venture decorations -->
+        <svg class="hero-deco s-deco-bubbles" data-parallax="0.08" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="62" y="50" width="76" height="118" rx="20" fill="#6366f1" opacity="0.10"/>
+            <rect x="62" y="92" width="76" height="30" fill="#6366f1" opacity="0.08"/>
+            <circle cx="100" cy="40" r="5" fill="#8b5cf6" opacity="0.4"/>
+            <circle cx="86" cy="30" r="3" fill="#6366f1" opacity="0.35"/>
+            <circle cx="116" cy="28" r="4" fill="#8b5cf6" opacity="0.3"/>
+            <path d="M70 108 q 8 -10 16 0 t 16 0 t 16 0" stroke="#6366f1" stroke-width="2.4" fill="none" opacity="0.3"/>
+        </svg>
+        <svg class="hero-deco s-deco-cart" data-parallax="0.12" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 18 H28 L40 70 H92 L104 32 H34" stroke="#8b5cf6" stroke-width="3" fill="none" opacity="0.35" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="48" cy="88" r="7" stroke="#6366f1" stroke-width="3" fill="none" opacity="0.35"/>
+            <circle cx="86" cy="88" r="7" stroke="#6366f1" stroke-width="3" fill="none" opacity="0.35"/>
+        </svg>
+        <svg class="hero-deco s-deco-growth" data-parallax="0.06" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="78" width="20" height="42" rx="4" fill="#6366f1" opacity="0.18"/>
+            <rect x="46" y="58" width="20" height="62" rx="4" fill="#8b5cf6" opacity="0.22"/>
+            <rect x="78" y="66" width="20" height="54" rx="4" fill="#6366f1" opacity="0.16"/>
+            <rect x="110" y="34" width="20" height="86" rx="4" fill="#8b5cf6" opacity="0.24"/>
+            <rect x="142" y="14" width="20" height="106" rx="4" fill="#6366f1" opacity="0.2"/>
+            <path d="M24 92 L56 70 L88 80 L120 46 L152 24" stroke="#4f46e5" stroke-width="2.5" fill="none" opacity="0.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Building in public
+            </div>
+            <h1 class="hero-name" id="startupHeroName">
+                <span class="split-line"><span class="split-word">I turn</span> <span class="split-word">ideas</span> <span class="split-word">into</span></span>
+                <span class="split-line"><span class="split-word gradient-text">ventures</span> <span class="split-word">&amp;</span> <span class="split-word gradient-text">lessons.</span></span>
+            </h1>
+            <div class="hero-title-wrapper">
+                <span class="hero-title-static">Founder &amp; Builder</span>
+                <span class="hero-title-divider">|</span>
+                <span class="hero-title-dynamic" id="startupTypingText"></span>
+                <span class="typing-cursor">|</span>
+            </div>
+            <p class="hero-description">
+                Three ventures, real pilots, hard lessons. From a
+                <span class="highlight">prebiotic soda</span> to a
+                <span class="highlight">dark-kirana quick-commerce</span> model to an
+                <span class="highlight">all-electric bike-taxi platform</span> that's live today — I validate
+                with real customers before I build, and I'm honest about what the data says.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number sstat-number" data-target="3">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Ventures Built</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number sstat-number" data-target="3">0</span><span class="stat-suffix"></span>
+                    <span class="stat-label">Live Apps Shipped</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number sstat-number" data-target="49">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Customer Interviews</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number sstat-number" data-target="30">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Experts Reached</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="#ventures" class="btn btn-primary" data-magnetic>
+                    See the ventures <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#lessons" class="btn btn-outline" data-magnetic>
+                    The lessons
+                </a>
+            </div>
+        </div>
+
+        <!-- Field-notes card (analog to the technical terminal) -->
+        <div class="spark-card fade-in" id="sparkCard">
+            <div class="spark-header">
+                <div class="terminal-dots">
+                    <span class="dot-red"></span>
+                    <span class="dot-yellow"></span>
+                    <span class="dot-green"></span>
+                </div>
+                <span class="spark-title">field_notes.md</span>
+            </div>
+            <div class="spark-body">
+                <p class="spark-line"><span class="spark-prompt">#</span> How it started</p>
+                <p class="spark-text">Two different podcasts — the Zepto founders in one, Ghazal Alagh
+                (Mamaearth) in another — lit it: <em>"they did this; why not me?"</em></p>
+                <p class="spark-line"><span class="spark-prompt">&gt;</span> rule #1</p>
+                <p class="spark-text">Solve a legitimate human problem, and the customers come.</p>
+                <p class="spark-line"><span class="spark-prompt">&gt;</span> status</p>
+                <p class="spark-text"><span class="spark-ok">●</span> 3 ventures &nbsp;·&nbsp; Orbit (EV bike taxi) is live in pre-launch</p>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll the journey</span>
+        </div>
+    </section>
+
+    <!-- Marquee Ticker (Technical) -->
+    <div class="marquee-section" data-world="technical">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>Machine Learning</span><span class="marquee-dot"></span>
+                <span>Deep Learning</span><span class="marquee-dot"></span>
+                <span>NLP</span><span class="marquee-dot"></span>
+                <span>Generative AI</span><span class="marquee-dot"></span>
+                <span>LangGraph</span><span class="marquee-dot"></span>
+                <span>Neo4j</span><span class="marquee-dot"></span>
+                <span>PySpark</span><span class="marquee-dot"></span>
+                <span>Multi-Agent Systems</span><span class="marquee-dot"></span>
+                <span>Knowledge Graphs</span><span class="marquee-dot"></span>
+                <span>RAG</span><span class="marquee-dot"></span>
+                <span>FastAPI</span><span class="marquee-dot"></span>
+                <span>Transformers</span><span class="marquee-dot"></span>
+                <span>Docker</span><span class="marquee-dot"></span>
+                <span>Kubernetes</span><span class="marquee-dot"></span>
+                <span>AWS</span><span class="marquee-dot"></span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span>Machine Learning</span><span class="marquee-dot"></span>
+                <span>Deep Learning</span><span class="marquee-dot"></span>
+                <span>NLP</span><span class="marquee-dot"></span>
+                <span>Generative AI</span><span class="marquee-dot"></span>
+                <span>LangGraph</span><span class="marquee-dot"></span>
+                <span>Neo4j</span><span class="marquee-dot"></span>
+                <span>PySpark</span><span class="marquee-dot"></span>
+                <span>Multi-Agent Systems</span><span class="marquee-dot"></span>
+                <span>Knowledge Graphs</span><span class="marquee-dot"></span>
+                <span>RAG</span><span class="marquee-dot"></span>
+                <span>FastAPI</span><span class="marquee-dot"></span>
+                <span>Transformers</span><span class="marquee-dot"></span>
+                <span>Docker</span><span class="marquee-dot"></span>
+                <span>Kubernetes</span><span class="marquee-dot"></span>
+                <span>AWS</span><span class="marquee-dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Marquee Ticker (Startup) -->
+    <div class="marquee-section marquee-startup" data-world="startup">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>Customer Discovery</span><span class="marquee-dot"></span>
+                <span>Unit Economics</span><span class="marquee-dot"></span>
+                <span>0 → 1</span><span class="marquee-dot"></span>
+                <span>Field Research</span><span class="marquee-dot"></span>
+                <span>Prebiotic Soda</span><span class="marquee-dot"></span>
+                <span>Quick Commerce</span><span class="marquee-dot"></span>
+                <span>Dark Kirana</span><span class="marquee-dot"></span>
+                <span>Product–Market Fit</span><span class="marquee-dot"></span>
+                <span>Go-To-Market</span><span class="marquee-dot"></span>
+                <span>Pricing</span><span class="marquee-dot"></span>
+                <span>Pilots</span><span class="marquee-dot"></span>
+                <span>Distribution</span><span class="marquee-dot"></span>
+                <span>Founder Lessons</span><span class="marquee-dot"></span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span>Customer Discovery</span><span class="marquee-dot"></span>
+                <span>Unit Economics</span><span class="marquee-dot"></span>
+                <span>0 → 1</span><span class="marquee-dot"></span>
+                <span>Field Research</span><span class="marquee-dot"></span>
+                <span>Prebiotic Soda</span><span class="marquee-dot"></span>
+                <span>Quick Commerce</span><span class="marquee-dot"></span>
+                <span>Dark Kirana</span><span class="marquee-dot"></span>
+                <span>Product–Market Fit</span><span class="marquee-dot"></span>
+                <span>Go-To-Market</span><span class="marquee-dot"></span>
+                <span>Pricing</span><span class="marquee-dot"></span>
+                <span>Pilots</span><span class="marquee-dot"></span>
+                <span>Distribution</span><span class="marquee-dot"></span>
+                <span>Founder Lessons</span><span class="marquee-dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper (shrinking box effect) -->
+    <div class="main-content" id="mainContent">
+
+    <!-- About Section -->
+    <section class="section about" id="about" data-world="technical">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">01.</span> About Me
+            </h2>
+            <div class="about-grid">
+                <div class="about-image-wrapper fade-in">
+                    <div class="about-image-container">
+                        <img src="assets/img/eswar-profile.jpg" alt="Eswar Adapa" class="about-image">
+                        <div class="image-border"></div>
+                    </div>
+                    <div class="about-socials">
+                        <a href="https://github.com/Eswar-09" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/eswar-adapa-311077253/" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:eswaradapa90@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="about-text fade-in">
+                    <p class="about-intro">
+                        I'm a <span class="highlight">Data Scientist / AI Engineer</span> based in Mumbai, India, with
+                        2+ years building scalable, production-grade AI systems end-to-end.
+                    </p>
+                    <p>
+                        My journey spans across <span class="highlight">Machine Learning</span>,
+                        <span class="highlight">Big Data Engineering</span>,
+                        <span class="highlight">Knowledge Graphs</span>, and <span class="highlight">Agentic AI</span>.
+                        I've scaled POI pipelines from 23M to 220M records across 38 countries,
+                        cut geospatial mapping from 1 week to 2.5 hours, and integrated an
+                        83M+ node knowledge graph with a LangGraph search agent.
+                    </p>
+                    <p>
+                        I graduated with a B.Tech (Honors) in Electronics and Communication Engineering from
+                        IIIT Sricity with a CGPA of 8.02, and have been recognized as
+                        <span class="highlight">Best Employee</span> at Infinite Analytics.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Mumbai, India</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-building"></i>
+                            <span>Infinite Analytics</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>IIIT Sricity, B.Tech (Honors)</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-award"></i>
+                            <span>Best Employee Award</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills" data-world="technical">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">02.</span> Skills & Expertise
+            </h2>
+            <div class="skills-grid stagger-in">
+                <div class="skill-card fade-in" data-delay="0">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">C</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Cypher</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in" data-delay="80">
+                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                    <h3>ML & AI</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Generative AI</span>
+                        <span class="tag">LLMs</span>
+                        <span class="tag">Transformers</span>
+                        <span class="tag">DistilBERT</span>
+                        <span class="tag">Recommender Systems</span>
+                        <span class="tag">OCR</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in" data-delay="160">
+                    <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Agentic AI</h3>
+                    <div class="skill-tags">
+                        <span class="tag">LangGraph</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">RAG</span>
+                        <span class="tag">Graph RAG</span>
+                        <span class="tag">Multi-Agent Systems</span>
+                        <span class="tag">Tool / Function Calling</span>
+                        <span class="tag">Prompt Engineering</span>
+                        <span class="tag">Guardrails</span>
+                        <span class="tag">Evaluations</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in" data-delay="240">
+                    <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Big Data</h3>
+                    <div class="skill-tags">
+                        <span class="tag">PySpark</span>
+                        <span class="tag">Apache Sedona</span>
+                        <span class="tag">Hadoop</span>
+                        <span class="tag">Delta Lake</span>
+                        <span class="tag">Apache Iceberg</span>
+                        <span class="tag">Airflow</span>
+                        <span class="tag">Trino</span>
+                        <span class="tag">Parquet</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in" data-delay="320">
+                    <div class="skill-icon"><i class="fas fa-server"></i></div>
+                    <h3>Backend & APIs</h3>
+                    <div class="skill-tags">
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">REST APIs</span>
+                        <span class="tag">SSE Streaming</span>
+                        <span class="tag">Pydantic</span>
+                        <span class="tag">RabbitMQ</span>
+                        <span class="tag">WebSockets</span>
+                        <span class="tag">pandas</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in" data-delay="400">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h3>Databases</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Neo4j</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Qdrant</span>
+                        <span class="tag">FAISS</span>
+                        <span class="tag">ChromaDB</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in" data-delay="480">
+                    <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Graph & Geospatial</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Knowledge Graphs</span>
+                        <span class="tag">Graph Data Science</span>
+                        <span class="tag">Node2Vec</span>
+                        <span class="tag">GraphSAGE</span>
+                        <span class="tag">H3 Indexing</span>
+                        <span class="tag">Spatial Joins</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in" data-delay="560">
+                    <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud & MLOps</h3>
+                    <div class="skill-tags">
+                        <span class="tag">AWS EC2 / S3 / EKS</span>
+                        <span class="tag">SageMaker</span>
+                        <span class="tag">Bedrock</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">Jenkins</span>
+                        <span class="tag">CI/CD</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in" data-delay="640">
+                    <div class="skill-icon"><i class="fas fa-gauge-high"></i></div>
+                    <h3>Observability</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Langfuse</span>
+                        <span class="tag">Datadog</span>
+                        <span class="tag">New Relic</span>
+                        <span class="tag">Loguru</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Dashboard Strip -->
+    <section class="section dashboard-strip" id="dashboard" data-world="technical">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number"></span> Impact At a Glance
+            </h2>
+            <div class="dashboard-grid fade-in">
+                <!-- Mini Line Chart -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <span class="dash-label">Model Accuracy</span>
+                        <span class="dash-value dash-up"><i class="fas fa-arrow-up"></i> 86.7%</span>
+                    </div>
+                    <svg class="dash-chart" viewBox="0 0 200 60" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#ff7922" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="#ff7922" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                        <path class="dash-area" d="M0,55 L30,45 L60,48 L90,30 L120,25 L150,15 L180,10 L200,5 L200,60 L0,60 Z" fill="url(#lineGrad)"/>
+                        <polyline class="dash-line" points="0,55 30,45 60,48 90,30 120,25 150,15 180,10 200,5" fill="none" stroke="#ff7922" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="200" cy="5" r="4" fill="#ff7922" class="dash-pulse"/>
+                    </svg>
+                    <div class="dash-footer">83% <i class="fas fa-arrow-right"></i> 86.7% accuracy</div>
+                </div>
+
+                <!-- Donut Chart -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <span class="dash-label">Pipeline Coverage</span>
+                        <span class="dash-value dash-up"><i class="fas fa-arrow-up"></i> 38 countries</span>
+                    </div>
+                    <div class="donut-container">
+                        <svg class="donut-chart" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(17,17,17,0.06)" stroke-width="10"/>
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#ff7922" stroke-width="10"
+                                stroke-dasharray="226.2" stroke-dashoffset="226.2"
+                                stroke-linecap="round" transform="rotate(-90 50 50)" class="donut-fill"/>
+                        </svg>
+                        <div class="donut-center">
+                            <span class="donut-number">220M</span>
+                            <span class="donut-sub">POIs</span>
+                        </div>
+                    </div>
+                    <div class="dash-footer">Scaled from 23M to 220M records</div>
+                </div>
+
+                <!-- Bar Chart -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <span class="dash-label">Response Time</span>
+                        <span class="dash-value dash-down"><i class="fas fa-arrow-down"></i> 60% faster</span>
+                    </div>
+                    <div class="bar-chart">
+                        <div class="bar-group">
+                            <div class="bar bar-before" style="--bar-height: 90%;"><span>8-12s</span></div>
+                            <div class="bar-label">Before</div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar bar-after" style="--bar-height: 40%;"><span>3-5s</span></div>
+                            <div class="bar-label">After</div>
+                        </div>
+                    </div>
+                    <div class="dash-footer">Sherlock AI response latency</div>
+                </div>
+
+                <!-- Metric Card -->
+                <div class="dash-card dash-card-highlight">
+                    <div class="dash-card-header">
+                        <span class="dash-label">Throughput</span>
+                        <span class="dash-value dash-up"><i class="fas fa-bolt"></i> 10x</span>
+                    </div>
+                    <div class="metric-big">
+                        <span class="metric-number">10</span>
+                        <span class="metric-unit">x</span>
+                    </div>
+                    <div class="metric-bar-track">
+                        <div class="metric-bar-fill"></div>
+                    </div>
+                    <div class="dash-footer">31% lower token cost · Sherlock AI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience" data-world="technical">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">03.</span> Experience
+            </h2>
+
+            <div class="timeline">
+                <!-- Infinite Analytics -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Data Scientist / AI Engineer</h3>
+                                <p class="company">Infinite Analytics</p>
+                            </div>
+                            <span class="timeline-date">Feb 2024 &mdash; Present</span>
+                        </div>
+
+                        <div class="project-card">
+                            <h4><i class="fas fa-database"></i> POI Ingestion & Data Scaling</h4>
+                            <ul>
+                                <li>Consolidated POI crawling, ingestion & validation pipelines (RabbitMQ, Redis, MongoDB, FastAPI), expanding coverage from <strong>23M POIs across 4 countries to 220M across 38 countries</strong></li>
+                                <li>Improved POI-type mapping accuracy from <strong>83% to 86.7%</strong>, replacing a 51-model LightGBM cascade with a unified <strong>DistilBERT</strong> trained on 2.5M POIs at 0.005s inference latency</li>
+                                <li>Cut geospatial error rates from <strong>18% to 14%</strong> via plus-code mappings and triangular normalization</li>
+                                <li>Shortened Point-to-Polygon mapping from <strong>1 week to 2.5 hours</strong> with Apache Sedona (partition-aware pre-join) and Apache Iceberg</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-card">
+                            <h4><i class="fas fa-robot"></i> Sherlock Agentic Space: Multi-Agent Operations Platform</h4>
+                            <ul>
+                                <li>Migrated Sherlock AI from a monolithic LangChain Customer Success agent to a <strong>LangGraph multi-agent system</strong> with 7 specialists, tool calling, and persistent memory, achieving <strong>10x throughput</strong>, <strong>31% lower token cost</strong>, and responses from 8-12s to 3-5s</li>
+                                <li>Extended the platform into a suite of internal agents, Customer Success, Scrum Master, Sales, Marketing, HR, and Product, fronted by a single <strong>Flask dashboard</strong> with persona-routed search and RAG retrieval</li>
+                                <li>Strengthened agents with plan-aware guardrails, deterministic IDs, and an overlay model, driving <strong>12% higher customer retention</strong>, <strong>18% more qualified leads</strong>, and <strong>15% LinkedIn channel growth</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="project-card">
+                            <h4><i class="fas fa-project-diagram"></i> POI Knowledge Graph + LangGraph Search Agent</h4>
+                            <ul>
+                                <li>Constructed a <strong>15-node-type, 14-relationship Neo4j Knowledge Graph</strong> over 83M+ POIs, enabling Graph RAG and reasoning across structured and unstructured enterprise data</li>
+                                <li>Generated graph embeddings via <strong>Node2Vec, FastRP, HashGNN, and GraphSAGE</strong> (Graph Data Science), achieving <strong>8x speedup in person resolution</strong> and <strong>6&ndash;15x in POI ingestion</strong></li>
+                                <li>Integrated an <strong>autonomous LangGraph search agent</strong> over hybrid Graph + Vector RAG, served via a FastAPI SSE streaming chat with <strong>22 tools</strong> and a clarify-first protocol</li>
+                                <li>Monitored with Langfuse, Datadog & New Relic; deployed through Docker, Jenkins CI/CD, and Kubernetes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DRDO -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Research Intern</h3>
+                                <p class="company">DRDO (Defence Research and Development Organisation)</p>
+                            </div>
+                            <span class="timeline-date">May 2023 &mdash; Aug 2023</span>
+                        </div>
+                        <div class="project-card">
+                            <h4><i class="fas fa-wave-square"></i> sEMG Signal Analysis & Gait Modeling</h4>
+                            <ul>
+                                <li>Improved preprocessing and symbolization of sEMG data, yielding a <strong>20% increase</strong> in data quality</li>
+                                <li>Trained deep learning models on IMU and sEMG walking data to classify <strong>7 gait phases with 92% accuracy</strong></li>
+                                <li>Applied Symbolic Transfer Entropy (sTE) to study muscle interactions, identifying a <strong>25% rise</strong> in inter-muscle information transfer linked to walking speed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Internship Manager</h3>
+                                <p class="company">BITS Pilani Collaboration</p>
+                            </div>
+                            <span class="timeline-date">Jun 2025 &mdash; Jul 2025</span>
+                        </div>
+                        <div class="project-card">
+                            <h4><i class="fas fa-users"></i> Scrum Master & Project Manager</h4>
+                            <ul>
+                                <li>Managed a cohort of <strong>5 BITS Pilani interns</strong> during an 8-week program</li>
+                                <li>Directed task allocation, sprint planning, and progress tracking</li>
+                                <li>Guided interns on technical and workflow best practices</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="section publications" id="publications" data-world="technical">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">04.</span> Publications
+            </h2>
+            <a href="https://ieeexplore.ieee.org/abstract/document/10317229/" target="_blank" class="publication-card fade-in" style="text-decoration:none;color:inherit;">
+                <div class="pub-icon"><i class="fas fa-file-lines"></i></div>
+                <div class="pub-content">
+                    <span class="pub-venue">APSIPA'23 &mdash; IEEE &middot; Taiwan</span>
+                    <h3>Fatigue Classification and Onset Estimation Using sEMG Signals During Strength Training</h3>
+                    <p class="pub-date">Aug 2022 &mdash; Apr 2023</p>
+                    <p>Presented at the <strong>APSIPA'23 conference, Taiwan (IEEE)</strong>. Achieved
+                    <strong>86% classification accuracy</strong> using ML models with Majority Windowing, with a
+                    <strong>12% estimation error</strong>.</p>
+                    <div class="pub-tags">
+                        <span class="tag">sEMG</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Signal Processing</span>
+                        <span class="tag">IEEE</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section achievements" id="achievements" data-world="technical">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">05.</span> Achievements
+            </h2>
+            <div class="achievements-grid stagger-in">
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Best Employee Award</h3>
+                    <p class="achievement-period">Feb 2024 &mdash; May 2025</p>
+                    <p>Recognized for leading <strong>2 of 3 high-impact projects</strong> that expanded business coverage from <strong>4 to 38 countries</strong> — spanning Data Engineering, Knowledge Graph development, and GenAI integration.</p>
+                </div>
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon"><i class="fas fa-medal"></i></div>
+                    <h3>Climate Change Grand Challenge</h3>
+                    <p class="achievement-period">Nasscom & Telangana Government</p>
+                    <p>Ranked among the <strong>top 40 out of 7000+ teams</strong> nationwide. Built a predictive framework for heatwave events and Air Quality Index in Tier-2 cities.</p>
+                </div>
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon"><i class="fas fa-users-gear"></i></div>
+                    <h3>IEEE Secretary</h3>
+                    <p class="achievement-period">IIIT Sricity &mdash; Mar 2023 &mdash; Apr 2024</p>
+                    <p>Coordinated travel and lodging for <strong>100+ attendees</strong> at the ESDC Conference. Managed logistics for an event rated <strong>4.5/5</strong> by participants.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section education" id="education" data-world="technical">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">06.</span> Education
+            </h2>
+            <div class="education-card fade-in">
+                <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="edu-content">
+                    <h3>Indian Institute of Information Technology, Sricity</h3>
+                    <p class="edu-degree">B.Tech (Honors), Electronics and Communication Engineering</p>
+                    <p class="edu-date">Dec 2020 &mdash; Apr 2024</p>
+                    <div class="edu-gpa">
+                        <span class="gpa-label">CGPA</span>
+                        <span class="gpa-value">8.02</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ STARTUP WORLD SECTIONS ============ -->
+
+    <!-- Builder's Mindset -->
+    <section class="section builder" id="builder" data-world="startup">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">01.</span> The Builder's Mindset
+            </h2>
+            <div class="builder-grid">
+                <blockquote class="builder-quote fade-in">
+                    <i class="fas fa-quote-left"></i>
+                    <p>“Don't worry about failure; you only have to be right once.”</p>
+                    <cite>— Drew Houston, Dropbox</cite>
+                </blockquote>
+                <div class="builder-text fade-in">
+                    <p class="builder-intro">
+                        Same age as the <span class="highlight">Zepto founders</span>. Watching what they'd built
+                        flipped a switch — <em>why not me?</em> — and <span class="highlight">Ghazal Alagh (Mamaearth)</span>
+                        made the path feel real, not theoretical.
+                    </p>
+                    <p>
+                        The spark came from podcasts; the addiction came from doing. The second I started researching,
+                        talking to people, and building, it hit different — <span class="highlight">a real rush</span>.
+                        So I kept building, kept shipping, kept learning.
+                    </p>
+                    <p>
+                        <span class="highlight">Hard work in the right direction</span> has been my bet for years. Still is.
+                    </p>
+                    <div class="principle-chips">
+                        <span class="p-chip"><i class="fas fa-bullseye"></i> Solve real problems</span>
+                        <span class="p-chip"><i class="fas fa-vial"></i> Validate before building</span>
+                        <span class="p-chip"><i class="fas fa-eye"></i> Learn in the open</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Ventures -->
+    <section class="section ventures" id="ventures" data-world="startup">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">02.</span> The Ventures
+            </h2>
+            <div class="ventures-grid stagger-in">
+                <!-- Venture 01 -->
+                <div class="venture-card fade-in">
+                    <div class="venture-top">
+                        <span class="venture-num">01</span>
+                        <span class="venture-status status-stopped">Stopped · learned</span>
+                    </div>
+                    <div class="venture-logo">
+                        <img src="assets/img/prebiotic-soda-logo.svg" alt="Prebiotic Soda logo">
+                    </div>
+                    <h3 class="venture-name">Prebiotic Soda</h3>
+                    <p class="venture-tagline">A healthy, low-sugar soda for India's emerging gut-health market — inspired by Olipop.</p>
+                    <div class="venture-meta">
+                        <span class="tag">30+ experts reached</span>
+                        <span class="tag">2 taste batches</span>
+                        <span class="tag">Beverage / D2C</span>
+                    </div>
+                    <a href="#v1-detail" class="venture-link" data-magnetic>Read the story <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Venture 02 -->
+                <div class="venture-card fade-in">
+                    <div class="venture-top">
+                        <span class="venture-num">02</span>
+                        <span class="venture-status status-stopped">Piloted · learned</span>
+                    </div>
+                    <div class="venture-logo">
+                        <img src="assets/img/quickkirana-logo.jpeg" alt="Quick Kirana logo">
+                    </div>
+                    <h3 class="venture-name">Quick Kirana</h3>
+                    <p class="venture-tagline">Turn neighbourhood kirana stores into dark stores for fast, local grocery delivery.</p>
+                    <div class="venture-meta">
+                        <span class="tag">49 interviews</span>
+                        <span class="tag">Live community pilot</span>
+                        <span class="tag">Quick Commerce</span>
+                    </div>
+                    <a href="#v2-detail" class="venture-link" data-magnetic>Read the story <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Venture 03 — Orbit (live) -->
+                <div class="venture-card venture-flagship fade-in">
+                    <div class="venture-top">
+                        <span class="venture-num">03</span>
+                        <span class="venture-status status-live"><span class="live-dot"></span> Live · building</span>
+                    </div>
+                    <div class="venture-logo">
+                        <img src="assets/img/orbit-logo.svg" alt="Orbit logo">
+                    </div>
+                    <h3 class="venture-name">Orbit <span class="venture-sub-name">(Evigo)</span></h3>
+                    <p class="venture-tagline">An asset-light, all-electric bike-taxi platform for India. Captains rent, we route, riders save up to 30%.</p>
+                    <div class="venture-meta">
+                        <span class="tag">3 live apps</span>
+                        <span class="tag">Spring Boot + Flutter</span>
+                        <span class="tag">Mobility / EV</span>
+                    </div>
+                    <a href="#v3-detail" class="venture-link" data-magnetic>Read the story <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section class="section jtimeline" id="timeline" data-world="startup">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">03.</span> The Timeline
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker"><div class="marker-dot"></div><div class="marker-line"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div><h3>The first spark</h3><p class="company">Prebiotic Soda</p></div>
+                            <span class="timeline-date">Apr 26, 2024</span>
+                        </div>
+                        <p class="jt-desc">The idea is born — after watching the Zepto founders and Mamaearth's Ghazal Alagh on two separate podcasts, I start chasing a healthy prebiotic soda for India.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker"><div class="marker-dot"></div><div class="marker-line"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div><h3>Expert outreach</h3><p class="company">Prebiotic Soda</p></div>
+                            <span class="timeline-date">Feb 12, 2025</span>
+                        </div>
+                        <p class="jt-desc">Cold-reach 30+ R&amp;D scientists, flavorists and formulators to shape the formulation.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker"><div class="marker-dot"></div><div class="marker-line"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div><h3>First taste batch</h3><p class="company">Prebiotic Soda</p></div>
+                            <span class="timeline-date">Mar 15, 2025</span>
+                        </div>
+                        <p class="jt-desc">Run the first manufacturer taste-test batch — promising on paper, short on taste.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker"><div class="marker-dot"></div><div class="marker-line"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div><h3>Second taste batch</h3><p class="company">Prebiotic Soda</p></div>
+                            <span class="timeline-date">Apr 5, 2025</span>
+                        </div>
+                        <p class="jt-desc">Iterate the recipe with the manufacturer; taste still doesn't land.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker"><div class="marker-dot"></div><div class="marker-line"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div><h3>Called it — and pivoted</h3><p class="company">Prebiotic Soda → Quick Kirana</p></div>
+                            <span class="timeline-date">Jun 19, 2025</span>
+                        </div>
+                        <p class="jt-desc">Stop the soda — India's fiber-soda market isn't ready yet — and turn toward the kirana / quick-commerce problem.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker"><div class="marker-dot"></div><div class="marker-line"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div><h3>Community pilot</h3><p class="company">Quick Kirana</p></div>
+                            <span class="timeline-date">2025</span>
+                        </div>
+                        <p class="jt-desc">Run a WhatsApp + door-to-door pilot in my building — 49 interviews, first orders, and the honest 49→1 funnel.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker"><div class="marker-dot jt-live"></div><div class="marker-line"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div><h3>Orbit — first pilot</h3><p class="company">Orbit (Evigo)</p></div>
+                            <span class="timeline-date">Fri, Jun 5, 2026</span>
+                        </div>
+                        <p class="jt-desc">First real rides on the road — evening runs from <strong>BKC to nearby railway stations</strong>.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker"><div class="marker-dot jt-live"></div><div class="marker-line"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div><h3>Orbit — second pilot</h3><p class="company">Orbit (Evigo)</p></div>
+                            <span class="timeline-date">Jun 9, 2026</span>
+                        </div>
+                        <p class="jt-desc">More evening BKC → station rides, refining matching and timing.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-marker"><div class="marker-dot jt-live"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div><h3>Orbit — street marketing</h3><p class="company">Orbit (Evigo)</p></div>
+                            <span class="timeline-date">Jun 10, 2026</span>
+                        </div>
+                        <p class="jt-desc">Handed pamphlets to <strong>Rapido riders at Kurla station</strong> in the morning rush — recruiting the first captains and riders. Pre-launch and live.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dives -->
+    <section class="section journey" id="journey" data-world="startup">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">04.</span> Inside Each Venture
+            </h2>
+
+            <!-- ===== Venture 01 detail ===== -->
+            <div class="venture-detail fade-in" id="v1-detail">
+                <div class="vd-header">
+                    <img src="assets/img/prebiotic-soda-logo.svg" alt="" class="vd-logo">
+                    <div>
+                        <h3>Prebiotic Soda</h3>
+                        <p class="vd-sub">A gut-health soda for India · solo, with friends on research</p>
+                    </div>
+                    <span class="venture-status status-stopped">Stopped · learned</span>
+                </div>
+                <div class="listen-row">
+                    <div class="audio-player">
+                        <audio preload="metadata" src="assets/audio/story-soda.mp3"></audio>
+                        <button class="ap-play" aria-label="Play story"><i class="fas fa-play"></i></button>
+                        <div class="ap-body">
+                            <span class="ap-title"><i class="fas fa-wand-magic-sparkles"></i> Listen to this story</span>
+                            <div class="ap-wave" aria-label="Seek"></div>
+                        </div>
+                        <button class="ap-speed" aria-label="Playback speed">1×</button>
+                    </div>
+                </div>
+
+                <div class="story-arc">
+                    <div class="project-card">
+                        <h4><i class="fas fa-bolt"></i> The Spark</h4>
+                        <ul>
+                            <li>US health media was buzzing about <strong>dietary fiber</strong>; brands like <strong>Olipop, Poppi, Culture Pop &amp; Wild Wonder</strong> were booming on prebiotic sodas.</li>
+                            <li>Olipop's founder-led research story convinced me India's premium, health-conscious market was ready for a home-grown version.</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <h4><i class="fas fa-flask"></i> What I Built</h4>
+                        <ul>
+                            <li>Designed a recipe around <strong>inulin (chicory root)</strong> and the <strong>Bacillus subtilis</strong> probiotic — non-GMO, no refined sugar or artificial sweeteners, sweetened only with organic fruit juice.</li>
+                            <li>Wrote a full product + market plan under a <strong>“Svastha” (healthy body / mind / environment)</strong> philosophy, benchmarked against every major global prebiotic soda.</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <h4><i class="fas fa-people-arrows"></i> How I Validated</h4>
+                        <ul>
+                            <li>Cold-reached <strong>30+ R&amp;D scientists, flavorists and formulators</strong> on LinkedIn; a few engaged and helped shape the formulation.</li>
+                            <li>Partnered with a manufacturer to run <strong>2 taste-test batches</strong> to check whether the concept could actually taste good.</li>
+                        </ul>
+                    </div>
+                    <div class="project-card vd-stalled">
+                        <h4><i class="fas fa-hand"></i> Why It Stalled</h4>
+                        <ul>
+                            <li><strong>Taste never cracked</strong> — both batches fell short, and a Bangalore Olipop-clone was visibly struggling with the exact same problem.</li>
+                            <li>India's <strong>curd/Yakult culture</strong> meant the fiber-soda category wasn't ready; friends and early signals pointed the same way. I chose to stop rather than push a product I didn't believe in yet.</li>
+                        </ul>
+                    </div>
+                    <div class="project-card vd-lesson">
+                        <h4><i class="fas fa-lightbulb"></i> What I Learned</h4>
+                        <ul>
+                            <li><strong>Tell people your idea early.</strong> I stayed quiet too long — sharing sooner would have surfaced the taste and timing problems faster.</li>
+                            <li>For a consumer product, <strong>the product itself is the strategy</strong>: without taste, no story or branding matters.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Venture 02 detail ===== -->
+            <div class="venture-detail fade-in" id="v2-detail">
+                <div class="vd-header">
+                    <img src="assets/img/quickkirana-logo.jpeg" alt="" class="vd-logo">
+                    <div>
+                        <h3>Quick Kirana</h3>
+                        <p class="vd-sub">Dark-kirana quick commerce · with Samyak Bansal</p>
+                    </div>
+                    <span class="venture-status status-stopped">Piloted · learned</span>
+                </div>
+                <div class="listen-row">
+                    <div class="audio-player">
+                        <audio preload="metadata" src="assets/audio/story-kirana.mp3"></audio>
+                        <button class="ap-play" aria-label="Play story"><i class="fas fa-play"></i></button>
+                        <div class="ap-body">
+                            <span class="ap-title"><i class="fas fa-wand-magic-sparkles"></i> Listen to this story</span>
+                            <div class="ap-wave" aria-label="Seek"></div>
+                        </div>
+                        <button class="ap-speed" aria-label="Playback speed">1×</button>
+                    </div>
+                </div>
+
+                <div class="story-arc">
+                    <div class="project-card">
+                        <h4><i class="fas fa-bolt"></i> The Spark</h4>
+                        <ul>
+                            <li>I watched a <strong>Haldiram's distributor</strong> take next-day orders at a local kirana and thought: why is this not a 10-minute app?</li>
+                            <li>Reports of <strong>~2 lakh kiranas shutting down</strong> due to quick commerce framed the opportunity: defend kiranas instead of replacing them.</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <h4><i class="fas fa-store"></i> What I Built (the model)</h4>
+                        <ul>
+                            <li>A <strong>“dark kirana”</strong> model: use existing kirana shops as micro-fulfilment nodes, saving the <strong>5–10% of revenue</strong> quick-commerce burns on dedicated dark stores.</li>
+                            <li>Worked out detailed <strong>unit economics</strong> (cost-per-order, last-mile, margins), SKU strategy (<strong>90% of baskets in ~1,500 SKUs</strong>), and used <strong>Sherlock POI data</strong> on 14,325 grocery stores to map supply.</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <h4><i class="fas fa-clipboard-list"></i> How I Validated</h4>
+                        <ul>
+                            <li>Ran a real pilot in my own <strong>14-floor, 3-block community</strong> — a WhatsApp ordering group plus door-to-door interviews.</li>
+                            <li>Logged and analysed <strong>49 participants</strong>: 65% joined the group, ~41% said they'd order via an app, and we took our <strong>first ~4 orders (₹80 AOV)</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Live data dashboard -->
+                    <div class="startup-dash" id="startupDash">
+                        <div class="dash-strip-title"><i class="fas fa-chart-column"></i> Pilot data — what the field told us</div>
+                        <div class="dashboard-grid">
+                            <!-- Conversion funnel -->
+                            <div class="dash-card">
+                                <div class="dash-card-header">
+                                    <span class="dash-label">Conversion Funnel</span>
+                                    <span class="dash-value dash-warn"><i class="fas fa-arrow-down"></i> 49 → 1</span>
+                                </div>
+                                <div class="funnel">
+                                    <div class="funnel-row"><span class="funnel-bar" style="--w:100%"></span><span class="funnel-cap">49 interviews</span></div>
+                                    <div class="funnel-row"><span class="funnel-bar" style="--w:65%"></span><span class="funnel-cap">32 joined group</span></div>
+                                    <div class="funnel-row"><span class="funnel-bar" style="--w:41%"></span><span class="funnel-cap">20 app-willing</span></div>
+                                    <div class="funnel-row"><span class="funnel-bar funnel-bar-end" style="--w:6%"></span><span class="funnel-cap">1 actually ordered</span></div>
+                                </div>
+                                <div class="dash-footer">The honest gap between interest and action</div>
+                            </div>
+
+                            <!-- Sentiment donut -->
+                            <div class="dash-card">
+                                <div class="dash-card-header">
+                                    <span class="dash-label">Reception</span>
+                                    <span class="dash-value dash-up"><i class="fas fa-arrow-up"></i> 90%+</span>
+                                </div>
+                                <div class="donut-container">
+                                    <svg class="donut-chart" viewBox="0 0 100 100">
+                                        <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(17,17,17,0.06)" stroke-width="10"/>
+                                        <circle cx="50" cy="50" r="40" fill="none" stroke="#6366f1" stroke-width="10"
+                                            stroke-dasharray="251.3" stroke-dashoffset="251.3"
+                                            stroke-linecap="round" transform="rotate(-90 50 50)" class="s-donut" data-pct="0.91"/>
+                                    </svg>
+                                    <div class="donut-center">
+                                        <span class="donut-number">91%</span>
+                                        <span class="donut-sub">pos / neutral</span>
+                                    </div>
+                                </div>
+                                <div class="dash-footer">Warm in person — but warmth ≠ orders</div>
+                            </div>
+
+                            <!-- Age distribution bars -->
+                            <div class="dash-card">
+                                <div class="dash-card-header">
+                                    <span class="dash-label">Who Engaged</span>
+                                    <span class="dash-value dash-up">working-age</span>
+                                </div>
+                                <div class="bar-chart age-chart">
+                                    <div class="bar-group">
+                                        <div class="bar bar-age" style="--bar-height: 95%;"><span>37%</span></div>
+                                        <div class="bar-label">Young</div>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar bar-age" style="--bar-height: 100%;"><span>39%</span></div>
+                                        <div class="bar-label">Mid</div>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar bar-age bar-age-soft" style="--bar-height: 57%;"><span>22%</span></div>
+                                        <div class="bar-label">Elderly</div>
+                                    </div>
+                                </div>
+                                <div class="dash-footer">82% of elderly don't order online</div>
+                            </div>
+
+                            <!-- Unit economics metric -->
+                            <div class="dash-card dash-card-highlight">
+                                <div class="dash-card-header">
+                                    <span class="dash-label">Ops Cost / Order</span>
+                                    <span class="dash-value dash-up"><i class="fas fa-bolt"></i> 4× leaner</span>
+                                </div>
+                                <div class="metric-big">
+                                    <span class="metric-unit">₹</span><span class="metric-number">5</span>
+                                </div>
+                                <div class="metric-bar-track">
+                                    <div class="metric-bar-fill s-metric-fill" data-w="23"></div>
+                                </div>
+                                <div class="dash-footer">vs ~₹22 at a dedicated dark store</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card vd-stalled">
+                        <h4><i class="fas fa-hand"></i> Why It Stalled</h4>
+                        <ul>
+                            <li><strong>Pricing couldn't beat Zepto</strong> — a ₹180-MRP laddu we sold at cost was ₹110 on Zepto, so we couldn't win on value.</li>
+                            <li><strong>Rider economics &amp; ops</strong> — paying a rider ~₹2,000/day needs 5–6 committed shops; kiranas had no inventory/barcode systems, and fresh produce sells from carts, not stores.</li>
+                            <li><strong>The gut-punch:</strong> in a 93-member group, 70 read our post and <strong>only 1 joined</strong> — the community even rejected us for being tenants.</li>
+                        </ul>
+                    </div>
+                    <div class="project-card vd-lesson">
+                        <h4><i class="fas fa-lightbulb"></i> What I Learned</h4>
+                        <ul>
+                            <li><strong>Target the right customer.</strong> Our pitch ("help kiranas") didn't move people — they switch for better price, convenience or freshness, not charity.</li>
+                            <li><strong>Unit economics decide the game.</strong> In quick commerce, low AOV and last-mile cost quietly kill ideas that look great on a slide.</li>
+                            <li><strong>Interest is not intent.</strong> 49 friendly conversations converted to a single real order — only orders count.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Venture 03 detail — Orbit ===== -->
+            <div class="venture-detail venture-detail-flagship fade-in" id="v3-detail">
+                <div class="vd-header">
+                    <img src="assets/img/orbit-logo.svg" alt="" class="vd-logo">
+                    <div>
+                        <h3>Orbit <span class="vd-name-sub">· Evigo</span></h3>
+                        <p class="vd-sub">All-electric bike-taxi platform for India · founder</p>
+                    </div>
+                    <span class="venture-status status-live"><span class="live-dot"></span> Live · building</span>
+                </div>
+                <div class="listen-row">
+                    <div class="audio-player ap-live">
+                        <audio preload="metadata" src="assets/audio/story-orbit.mp3"></audio>
+                        <button class="ap-play" aria-label="Play story"><i class="fas fa-play"></i></button>
+                        <div class="ap-body">
+                            <span class="ap-title"><i class="fas fa-wand-magic-sparkles"></i> Listen to this story</span>
+                            <div class="ap-wave" aria-label="Seek"></div>
+                        </div>
+                        <button class="ap-speed" aria-label="Playback speed">1×</button>
+                    </div>
+                </div>
+
+                <!-- live app links (Rider emphasized) -->
+                <div class="live-links">
+                    <a href="https://orbit-bike-taxi.web.app" target="_blank" rel="noopener" class="live-link live-link-primary" data-magnetic><i class="fas fa-mobile-screen"></i> Open Rider app <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    <a href="https://orbit-captain.web.app" target="_blank" rel="noopener" class="live-link" data-magnetic><i class="fas fa-motorcycle"></i> Captain app <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    <a href="https://orbit-admin.web.app" target="_blank" rel="noopener" class="live-link" data-magnetic><i class="fas fa-gauge-high"></i> Admin <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    <a href="https://orbit-bike-taxi.fly.dev" target="_blank" rel="noopener" class="live-link" data-magnetic><i class="fas fa-server"></i> Backend API <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    <a href="assets/docs/Orbit-Pitch.pdf" target="_blank" rel="noopener" class="live-link" data-magnetic><i class="fas fa-file-pdf"></i> Pitch deck <i class="fas fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <!-- Validation screenshots -->
+                <div class="shot-gallery fade-in">
+                    <div class="shot-gallery-title"><i class="fas fa-mobile-screen-button"></i> Validation — real screens from the shipped apps <span class="shot-hint">(tap to open the live app)</span></div>
+                    <div class="shot-scroll">
+                        <a href="https://orbit-bike-taxi.web.app" target="_blank" rel="noopener" class="shot">
+                            <img src="assets/img/orbit-shots/rider-home.png" alt="Orbit rider app — home screen" loading="lazy">
+                            <span class="shot-cap">Rider · Home</span>
+                        </a>
+                        <a href="https://orbit-bike-taxi.web.app" target="_blank" rel="noopener" class="shot">
+                            <img src="assets/img/orbit-shots/rider-fare.png" alt="Orbit rider app — fare estimate" loading="lazy">
+                            <span class="shot-cap">Rider · Fare</span>
+                        </a>
+                        <a href="https://orbit-bike-taxi.web.app" target="_blank" rel="noopener" class="shot">
+                            <img src="assets/img/orbit-shots/rider-ride.png" alt="Orbit rider app — live ride" loading="lazy">
+                            <span class="shot-cap">Rider · Live ride</span>
+                        </a>
+                        <a href="https://orbit-captain.web.app" target="_blank" rel="noopener" class="shot">
+                            <img src="assets/img/orbit-shots/captain-incoming.png" alt="Orbit captain app — incoming ride" loading="lazy">
+                            <span class="shot-cap">Captain · Incoming</span>
+                        </a>
+                        <a href="https://orbit-captain.web.app" target="_blank" rel="noopener" class="shot">
+                            <img src="assets/img/orbit-shots/captain-earnings.png" alt="Orbit captain app — earnings" loading="lazy">
+                            <span class="shot-cap">Captain · Earnings</span>
+                        </a>
+                        <a href="https://orbit-captain.web.app" target="_blank" rel="noopener" class="shot">
+                            <img src="assets/img/orbit-shots/captain-carbon.png" alt="Orbit captain app — carbon ledger" loading="lazy">
+                            <span class="shot-cap">Captain · Carbon</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="story-arc">
+                    <div class="project-card">
+                        <h4><i class="fas fa-bolt"></i> The Spark — Why Now</h4>
+                        <ul>
+                            <li>India spends <strong>₹3,800 crore a day</strong> importing oil. Indian Railways already electrified the long haul (95% electric, 35–50% lower operating cost) — commercial two-wheelers are next.</li>
+                            <li>The whole petrol bike-taxi loop is broken: captains <strong>pay to work</strong>, riders pay surge, and regulators are in court. The 2026 push toward a <strong>legal EV bike-taxi framework</strong> is a literal description of what Orbit is.</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <h4><i class="fas fa-layer-group"></i> What I Built</h4>
+                        <ul>
+                            <li>An <strong>asset-light, EV-only</strong> platform — I don't buy bikes, I orchestrate the network, partnering with fleets like <strong>Zypp, Hala &amp; Eveez</strong> (multi-fleet from day one).</li>
+                            <li>Shipped a full working stack: <strong>3 Flutter apps</strong> (rider, captain, admin) on a <strong>Spring Boot + MySQL + Redis</strong> backend deployed on <strong>Fly.io (Mumbai)</strong> — with KYC, audit logs, in-app SOS and a safety-flag engine already live.</li>
+                            <li>Built the <strong>per-trip carbon ledger</strong> (every km logs CO₂) as a future credit-revenue stream — not bolted on later.</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <h4><i class="fas fa-route"></i> Go-To-Market — The Andheri Power-Loop</h4>
+                        <ul>
+                            <li>First cluster is mapped: <strong>MIDC Metro ⇄ SEEPZ</strong>, a 2.5–3 km route that's 8–12 min by bike vs a 25–35 min bus ride.</li>
+                            <li>Every ride in the loop is <strong>under 3 km → 0% commission</strong>; feeder pockets keep each drop-off &lt;800 m from the next pickup. Recruit existing EV riders first, geo-fenced, profitable on day one.</li>
+                            <li>Field-validated first-hand at <strong>Zypp (Hyderabad), Hala &amp; Eveez</strong> branches — rentals, repair and fleet limits verified, not assumed.</li>
+                        </ul>
+                    </div>
+                    <div class="project-card vd-pilot">
+                        <h4><i class="fas fa-flag-checkered"></i> Pilot Log — live on the street</h4>
+                        <ul>
+                            <li><strong>5 Jun 2026 (Fri) — first pilot.</strong> Ran evening rides from <strong>BKC to nearby railway stations</strong> — the exact commuter pocket Orbit is built for.</li>
+                            <li><strong>9 Jun 2026 — second pilot.</strong> More evening BKC → station runs, sharpening matching and timing.</li>
+                            <li><strong>10 Jun 2026 — street marketing.</strong> Handed pamphlets to <strong>Rapido riders at Kurla station</strong> in the morning rush to pull in the first captains and riders.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Orbit economics dashboard -->
+                    <div class="startup-dash" data-dash="orbit">
+                        <div class="dash-strip-title"><i class="fas fa-chart-line"></i> The economics — one model that fixes all three sides</div>
+                        <div class="dashboard-grid">
+                            <!-- Captain take-home bars -->
+                            <div class="dash-card">
+                                <div class="dash-card-header">
+                                    <span class="dash-label">Captain / Day</span>
+                                    <span class="dash-value dash-up"><i class="fas fa-arrow-up"></i> +38%</span>
+                                </div>
+                                <div class="bar-chart">
+                                    <div class="bar-group">
+                                        <div class="bar bar-age-soft bar-econ" style="--bar-height: 72%;"><span>₹1,093</span></div>
+                                        <div class="bar-label">Petrol</div>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar bar-age bar-econ" style="--bar-height: 100%;"><span>₹1,510</span></div>
+                                        <div class="bar-label">Orbit EV</div>
+                                    </div>
+                                </div>
+                                <div class="dash-footer">+₹417/day · ~₹10,500 more a month</div>
+                            </div>
+
+                            <!-- Rider price -->
+                            <div class="dash-card">
+                                <div class="dash-card-header">
+                                    <span class="dash-label">Rider · 10 km</span>
+                                    <span class="dash-value dash-up"><i class="fas fa-arrow-down"></i> ~30% off</span>
+                                </div>
+                                <div class="bar-chart">
+                                    <div class="bar-group">
+                                        <div class="bar bar-age-soft bar-econ" style="--bar-height: 100%;"><span>₹160</span></div>
+                                        <div class="bar-label">Rapido</div>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar bar-age bar-econ" style="--bar-height: 69%;"><span>₹110</span></div>
+                                        <div class="bar-label">Orbit</div>
+                                    </div>
+                                </div>
+                                <div class="dash-footer">₹11/km flat · no surge · ₹0.45 vs ₹2.10 energy</div>
+                            </div>
+
+                            <!-- Commission donut -->
+                            <div class="dash-card">
+                                <div class="dash-card-header">
+                                    <span class="dash-label">Rides &lt; 3 km</span>
+                                    <span class="dash-value dash-up">0% fee</span>
+                                </div>
+                                <div class="donut-container">
+                                    <svg class="donut-chart" viewBox="0 0 100 100">
+                                        <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(17,17,17,0.06)" stroke-width="10"/>
+                                        <circle cx="50" cy="50" r="40" fill="none" stroke="#10b981" stroke-width="10"
+                                            stroke-dasharray="251.3" stroke-dashoffset="251.3"
+                                            stroke-linecap="round" transform="rotate(-90 50 50)" class="s-donut" data-pct="1"/>
+                                    </svg>
+                                    <div class="donut-center">
+                                        <span class="donut-number">0%</span>
+                                        <span class="donut-sub">commission</span>
+                                    </div>
+                                </div>
+                                <div class="dash-footer">The largest single bucket of city demand</div>
+                            </div>
+
+                            <!-- CO2 metric -->
+                            <div class="dash-card dash-card-highlight">
+                                <div class="dash-card-header">
+                                    <span class="dash-label">Climate / 100 km</span>
+                                    <span class="dash-value dash-up"><i class="fas fa-leaf"></i> zero tailpipe</span>
+                                </div>
+                                <div class="metric-big">
+                                    <span class="metric-number">9.1</span><span class="metric-unit">kg CO₂</span>
+                                </div>
+                                <div class="metric-bar-track">
+                                    <div class="metric-bar-fill s-metric-fill" data-w="91"></div>
+                                </div>
+                                <div class="dash-footer">~91 g/km avoided vs a petrol bike — logged per trip</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card vd-moat">
+                        <h4><i class="fas fa-chess-rook"></i> The Moat</h4>
+                        <ul>
+                            <li><strong>Rider-first protections</strong> (dead-km subsidy, cancellation shield) that Rapido can't copy without re-pricing its petrol fleet.</li>
+                            <li><strong>Multi-fleet supply</strong> + a <strong>carbon-credit ledger from day one</strong>, and — unlike most pre-launch competitors who have a Figma file — <strong>a working, deployed app</strong>.</li>
+                        </ul>
+                    </div>
+                    <div class="project-card vd-lesson">
+                        <h4><i class="fas fa-lightbulb"></i> Where It Stands</h4>
+                        <ul>
+                            <li>Backend live on Fly.io (Mumbai), three apps shipped end-to-end, first pilot cluster mapped — currently in <strong>pre-launch</strong>, applying every lesson from the soda and kirana experiments.</li>
+                            <li>This is the venture where customer discovery, unit economics and "build only what you've validated" finally compound into something real.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Pitch deck & street collateral -->
+                    <div class="collateral">
+                        <div class="shot-gallery-title"><i class="fas fa-file-lines"></i> Pitch deck &amp; street collateral <span class="shot-hint">(click to open)</span></div>
+                        <div class="collateral-grid">
+                            <a href="assets/docs/Orbit-Pitch.pdf" target="_blank" rel="noopener" class="collateral-item collateral-deck">
+                                <img src="assets/img/orbit-docs/pitch-cover-01.png" alt="Orbit pitch deck cover" loading="lazy">
+                                <span class="collateral-cap"><i class="fas fa-file-pdf"></i> Pitch deck · 11 slides</span>
+                            </a>
+                            <a href="assets/docs/Orbit-Rider-Pamphlet.pdf" target="_blank" rel="noopener" class="collateral-item">
+                                <img src="assets/img/orbit-docs/pamphlet-1.png" alt="Orbit rider pamphlet — ₹11/km" loading="lazy">
+                                <span class="collateral-cap"><i class="fas fa-file-pdf"></i> Rider pamphlet</span>
+                            </a>
+                            <a href="https://orbit-bike-taxi.web.app" target="_blank" rel="noopener" class="collateral-item">
+                                <img src="assets/img/orbit-docs/qr-card-1.png" alt="Orbit scan-to-ride QR card" loading="lazy">
+                                <span class="collateral-cap"><i class="fas fa-qrcode"></i> Scan-to-ride card</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lessons Learned -->
+    <section class="section lessons" id="lessons" data-world="startup">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">05.</span> Lessons Learned
+            </h2>
+            <div class="achievements-grid stagger-in">
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon"><i class="fas fa-comments"></i></div>
+                    <h3>Tell people early</h3>
+                    <p>My biggest soda mistake was staying quiet. Sharing the idea early surfaces fatal flaws — taste, timing, pricing — while they're still cheap to fix.</p>
+                </div>
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Interest ≠ intent</h3>
+                    <p>49 warm interviews became exactly one real order. Until someone pays, you've measured politeness, not demand.</p>
+                </div>
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon"><i class="fas fa-indian-rupee-sign"></i></div>
+                    <h3>Unit economics rule</h3>
+                    <p>Couldn't beat Zepto's ₹110 laddu. In low-AOV businesses, last-mile cost and pricing decide everything — long before product.</p>
+                </div>
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon"><i class="fas fa-user-check"></i></div>
+                    <h3>Frame for the customer</h3>
+                    <p>"Help local kiranas" didn't convert. People switch for price, convenience and trust — pitch the benefit they actually feel.</p>
+                </div>
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Market timing matters</h3>
+                    <p>India wasn't ready for fiber sodas yet. A right idea at the wrong time behaves exactly like a wrong idea.</p>
+                </div>
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon"><i class="fas fa-flag-checkered"></i></div>
+                    <h3>Knowing when to stop</h3>
+                    <p>Reading the data and walking away without ego is a skill. Each stop made the next experiment sharper.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The People -->
+    <section class="section people" id="people" data-world="startup">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">06.</span> Built With
+            </h2>
+            <p class="people-intro fade-in">I don't build alone — friends, college mates and early teammates jumped in on research, field work, engineering and honest reality-checks across all three ventures.</p>
+            <div class="people-grid stagger-in">
+                <div class="person-card fade-in">
+                    <div class="person-avatar">NS</div>
+                    <h3>Naman Sharma</h3>
+                    <p class="person-role">Orbit · collaborator</p>
+                    <p class="person-note">Helped build out the Orbit EV bike-taxi venture with me.</p>
+                </div>
+                <div class="person-card fade-in">
+                    <div class="person-avatar">A</div>
+                    <h3>Anurag</h3>
+                    <p class="person-role">Orbit · early believer (ex)</p>
+                    <p class="person-note">An early teammate who dug in, then stepped away after spotting driver-side concerns — a useful signal in itself.</p>
+                </div>
+                <div class="person-card fade-in">
+                    <div class="person-avatar">Ha</div>
+                    <h3>Harish</h3>
+                    <p class="person-role">Orbit · inputs (ex)</p>
+                    <p class="person-note">Former teammate who gave plenty of early input on the model.</p>
+                </div>
+                <div class="person-card fade-in">
+                    <div class="person-avatar">S</div>
+                    <h3>Saketh</h3>
+                    <p class="person-role">Orbit · inputs</p>
+                    <p class="person-note">College friend who pressure-tested ideas and gave lots of input.</p>
+                </div>
+                <div class="person-card fade-in">
+                    <div class="person-avatar">GJ</div>
+                    <h3>Gana Jayanth</h3>
+                    <p class="person-role">Orbit · inputs</p>
+                    <p class="person-note">Gave plenty of sharp input on the Orbit bike-taxi model.</p>
+                </div>
+                <div class="person-card fade-in">
+                    <div class="person-avatar">J</div>
+                    <h3>Jayanth</h3>
+                    <p class="person-role">Soda · research</p>
+                    <p class="person-note">College friend who dug into the soda market and championed the product.</p>
+                </div>
+                <div class="person-card fade-in">
+                    <div class="person-avatar">SB</div>
+                    <h3>Samyak Bansal</h3>
+                    <p class="person-role">Quick Kirana · co-pilot</p>
+                    <p class="person-note">Ran the community pilot &amp; door-to-door interviews with me (Block C).</p>
+                </div>
+                <div class="person-card fade-in">
+                    <div class="person-avatar">He</div>
+                    <h3>Hemanth</h3>
+                    <p class="person-role">Soda · research</p>
+                    <p class="person-note">Helped map competitors and pressure-test the soda concept.</p>
+                </div>
+                <div class="person-card person-card-network fade-in">
+                    <div class="person-avatar person-avatar-net"><i class="fas fa-users"></i></div>
+                    <h3>30+ experts</h3>
+                    <p class="person-role">Soda · cold-reached network</p>
+                    <p class="person-note">Food scientists, flavorists &amp; formulators who shaped the formulation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-number">07.</span> Get In Touch
+            </h2>
+            <div class="contact-content fade-in">
+                <p class="contact-text">
+                    I'm always open to discussing new projects, opportunities, or collaborations
+                    in data science and AI. Feel free to reach out!
+                </p>
+                <div class="contact-links stagger-in">
+                    <a href="mailto:eswaradapa90@gmail.com" class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">eswaradapa90@gmail.com</span>
+                    </a>
+                    <a href="tel:+916309925636" class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">+91 6309925636</span>
+                    </a>
+                    <a href="https://github.com/Eswar-09" target="_blank" class="contact-card">
+                        <i class="fab fa-github"></i>
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">Eswar-09</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/eswar-adapa-311077253/" target="_blank" class="contact-card">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">Eswar Adapa</span>
+                    </a>
+                </div>
+                <a href="mailto:eswaradapa90@gmail.com" class="btn btn-primary btn-lg" data-magnetic>
+                    Say Hello <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & Built by <span class="gradient-text">Eswar Adapa</span></p>
+            <p class="footer-sub">&copy; 2026. All rights reserved.</p>
+        </div>
+    </footer>
+
+    </div><!-- end .main-content -->
+
+    <!-- C: AI Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <!-- Toast Notification -->
+        <div class="chat-toast" id="chatToast">
+            <div class="chat-toast-avatar"><i class="fas fa-robot"></i></div>
+            <div class="chat-toast-text">
+                <strong>Eswar's AI Assistant</strong>
+                Hey! Ask me anything about Eswar's work, skills, or projects!
+            </div>
+            <button class="chat-toast-close" id="chatToastClose" aria-label="Close"><i class="fas fa-times"></i></button>
+        </div>
+        <button class="chat-toggle" id="chatToggle" data-magnetic aria-label="Chat with AI">
+            <i class="fas fa-robot"></i>
+            <span class="chat-toggle-label">Chat with AI</span>
+        </button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-header-left">
+                    <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                    <div>
+                        <span class="chat-name">Eswar's AI</span>
+                        <span class="chat-status"><span class="badge-dot"></span> Online</span>
+                    </div>
+                </div>
+                <button class="chat-close" id="chatClose" aria-label="Close chat"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-msg chat-bot">
+                    <p>Hey! I'm Eswar's AI assistant. Ask me anything about his work, skills, or experience!</p>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <div class="chat-suggestions" id="chatSuggestions">
+                    <button class="chat-suggestion" data-q="What does Eswar do?">What does Eswar do?</button>
+                    <button class="chat-suggestion" data-q="Tell me about Sherlock AI">Sherlock AI?</button>
+                    <button class="chat-suggestion" data-q="What is his tech stack?">Tech stack?</button>
+                    <button class="chat-suggestion" data-q="How to contact Eswar?">Contact?</button>
+                </div>
+                <div class="chat-input-row">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Ask about Eswar..." />
+                    <button class="chat-send" id="chatSend" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/access.js?v=8"></script>
+    <script src="js/effects.js?v=8"></script>
+    <script src="js/hero.js?v=8"></script>
+    <script src="js/widgets.js?v=8"></script>
+    <script src="js/startup.js?v=8"></script>
+</body>
+</html>

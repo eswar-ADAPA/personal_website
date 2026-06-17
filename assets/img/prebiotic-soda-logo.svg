@@ -1,0 +1,39 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Prebiotic Soda logo">
+  <defs>
+    <linearGradient id="canGrad" x1="60" y1="40" x2="140" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="55%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="90" y1="20" x2="130" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#a5f3c8"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+
+  <!-- soft glow plate -->
+  <circle cx="100" cy="104" r="86" fill="#6366f1" fill-opacity="0.07"/>
+
+  <!-- can body -->
+  <rect x="62" y="50" width="76" height="118" rx="20" fill="url(#canGrad)"/>
+  <!-- can top rim -->
+  <rect x="62" y="50" width="76" height="14" rx="7" fill="#ffffff" fill-opacity="0.22"/>
+  <!-- highlight stripe -->
+  <rect x="72" y="64" width="9" height="92" rx="4.5" fill="#ffffff" fill-opacity="0.25"/>
+
+  <!-- label band -->
+  <rect x="62" y="94" width="76" height="34" fill="#ffffff" fill-opacity="0.16"/>
+  <!-- fiber "wave" mark on the label -->
+  <path d="M70 111 q 8 -10 16 0 t 16 0 t 16 0" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+
+  <!-- prebiotic bubbles rising -->
+  <circle cx="100" cy="44" r="4.5" fill="#6366f1" fill-opacity="0.55"/>
+  <circle cx="86" cy="34" r="3" fill="#8b5cf6" fill-opacity="0.5"/>
+  <circle cx="114" cy="32" r="3.6" fill="#6366f1" fill-opacity="0.45"/>
+  <circle cx="124" cy="44" r="2.4" fill="#8b5cf6" fill-opacity="0.4"/>
+  <circle cx="76" cy="46" r="2.2" fill="#6366f1" fill-opacity="0.4"/>
+
+  <!-- wellness leaf -->
+  <path d="M118 22 C 150 24, 150 56, 120 64 C 124 46, 122 32, 118 22 Z" fill="url(#leafGrad)"/>
+  <path d="M120 30 C 126 40, 124 52, 121 60" stroke="#0f9d6b" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.55"/>
+</svg>

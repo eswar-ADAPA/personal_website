@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "orbit-bike-tax"
+  },
+  "targets": {
+    "orbit-bike-tax": {
+      "hosting": {
+        "eswar-adapa": [
+          "eswar-adapa"
+        ]
+      }
+    }
+  }
+}

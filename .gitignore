@@ -1,0 +1,12 @@
+# Local tooling / caches (not part of the site)
+.firebase/
+.claude/
+node_modules/
+**/.DS_Store
+*.pyc
+
+# Original pre-refactor monolith files (kept locally only)
+_backup/
+
+# Raw startup source material — business plans, field logs, sheets (keep private)
+docs/
