@@ -22,7 +22,7 @@ Only the website files are published. These are configured in [firebase.json](fi
 | `styles.css` | `DEPLOYMENT.md` (this file) |
 | `script.js` | `nginx-eswar-site.conf` |
 | `eswar-profile.jpg` | `1000067978 (1).JPG` (unused duplicate) |
-| `Eswar_Resume.pdf` | `.firebaserc`, `firebase.json`, dotfiles |
+| `assets/docs/Eswar_Adapa_Resume.pdf` | `.firebaserc`, `firebase.json`, dotfiles |
 
 To change what's published, edit the `"ignore"` list in `firebase.json`.
 

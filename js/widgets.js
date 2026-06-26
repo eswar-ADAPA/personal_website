@@ -101,16 +101,16 @@
             intro: "Hey! I'm Eswar's AI. Ask me about his technical work — ML, GenAI, Knowledge Graphs, or his projects!",
             suggestions: [
                 ['What does Eswar do?', 'What does Eswar do?'],
-                ['Sherlock AI?', 'Tell me about Sherlock AI'],
+                ['Multi-agent platform?', 'Tell me about the multi-agent platform'],
                 ['Tech stack?', 'What is his tech stack?'],
                 ['Contact?', 'How to contact Eswar?'],
             ],
             answers: {
-                'what does eswar do': "Eswar is a Data Scientist / AI Engineer at Infinite Analytics (2+ yrs) — Big Data, ML, Knowledge Graphs & Agentic AI. He scaled a POI pipeline 23M→220M across 38 countries, built a multi-agent ops platform (10x throughput), and integrated an 83M+ node knowledge graph. (He's also a founder — switch to Startup mode up top!)",
-                'sherlock ai agent': "Sherlock AI is the agentic platform Eswar built — migrated from a monolithic LangChain agent to a LangGraph multi-agent system with 7 specialists: 10x throughput, 31% lower token cost, responses from 8-12s down to 3-5s. Extended into CS, Scrum, Sales, Marketing, HR & Product agents behind a Flask dashboard.",
+                'what does eswar do': "Eswar is a Data Scientist / AI Engineer at Infinite Analytics (2+ yrs) — Big Data, ML, Knowledge Graphs & Agentic AI. He scaled real-world datasets to 220M+ records across 38 countries, built an 83M+ node knowledge graph, and deployed a multi-agent platform plus an in-house 1.5B LLM that power enterprise decision-making. (He's also a founder — switch to Startup mode up top!)",
+                'multi-agent platform agent': "The multi-agent platform Eswar built and owns turns proprietary consumer, location & business data into actionable intelligence over hybrid Graph + Vector RAG — with an autonomous planner–executor agent orchestrating Trino, Neo4j & MCP servers. He also pre-trained an in-house 1.5B LLM that beats GPT-4o on domain tasks at sub-10ms p95, and built 22+ agent tools with LangSmith + Datadog observability (10x throughput, 31% lower token cost).",
                 'tech stack': "Python, C, SQL, Cypher · LangGraph, LangChain, RAG / Graph RAG · DistilBERT & Transformers · PySpark, Apache Sedona, Iceberg, Airflow, Trino · FastAPI, Flask, RabbitMQ · Neo4j, MongoDB, Redis, MySQL, Qdrant, FAISS, ChromaDB · AWS (EC2/S3/EKS/SageMaker/Bedrock), Docker, K8s, Jenkins · Langfuse, Datadog, New Relic.",
                 'contact email reach phone': "Email: eswaradapa90@gmail.com · Phone: +91 6309925636 · LinkedIn: eswar-adapa · GitHub: Eswar-09.",
-                'default': "Great question! Eswar's a Data Scientist in ML, GenAI & Knowledge Graphs. Ask about Sherlock AI, his tech stack, or how to reach him — or flip to Startup mode for his founder journey!"
+                'default': "Great question! Eswar's a Data Scientist in ML, GenAI & Knowledge Graphs. Ask about his multi-agent platform, his tech stack, or how to reach him — or flip to Startup mode for his founder journey!"
             }
         },
         startup: {

@@ -292,14 +292,14 @@
             { text: 'app = graph.', cls: 'tk-var', end: '' }, { text: 'compile', cls: 'tk-method', end: '()  ' }, { text: '# 10x throughput', cls: 'tk-comment' },
         ],
         [
-            { text: '# POI Knowledge Graph Pipeline', cls: 'tk-comment' },
+            { text: '# Knowledge Graph Pipeline', cls: 'tk-comment' },
             { text: 'from', cls: 'tk-keyword' }, { text: ' neo4j ', cls: 'tk-var' }, { text: 'import', cls: 'tk-keyword' }, { text: ' GraphDatabase', cls: 'tk-class' },
             { text: 'from', cls: 'tk-keyword' }, { text: ' pyspark.sql ', cls: 'tk-var' }, { text: 'import', cls: 'tk-keyword' }, { text: ' SparkSession', cls: 'tk-class' },
             { text: '' },
             { text: 'spark = SparkSession.builder.', cls: 'tk-var', end: '' }, { text: 'getOrCreate', cls: 'tk-method', end: '()' },
-            { text: 'pois = spark.read.', cls: 'tk-var', end: '' }, { text: 'parquet', cls: 'tk-method', end: '(' }, { text: '"s3://poi-data/"', cls: 'tk-string', end: ')' },
-            { text: '# 220M POIs across 38 countries', cls: 'tk-comment' },
-            { text: 'embeddings = ', cls: 'tk-var', end: '' }, { text: 'GraphSAGE', cls: 'tk-class', end: '(' }, { text: 'pois', cls: 'tk-var', end: ', dims=' }, { text: '128', cls: 'tk-number', end: ')' },
+            { text: 'places = spark.read.', cls: 'tk-var', end: '' }, { text: 'parquet', cls: 'tk-method', end: '(' }, { text: '"s3://place-data/"', cls: 'tk-string', end: ')' },
+            { text: '# 220M+ records across 38 countries', cls: 'tk-comment' },
+            { text: 'embeddings = ', cls: 'tk-var', end: '' }, { text: 'GraphSAGE', cls: 'tk-class', end: '(' }, { text: 'places', cls: 'tk-var', end: ', dims=' }, { text: '128', cls: 'tk-number', end: ')' },
             { text: 'graph.run(', cls: 'tk-var', end: '' }, { text: '"gds.knn.write"', cls: 'tk-string', end: ', top_k=' }, { text: '10', cls: 'tk-number', end: ')' },
         ],
         [
@@ -445,7 +445,7 @@
 
     // Generate nodes in 3D space
     const labels = [
-        'POI', 'User', 'Brand', 'Review', 'Location',
+        'Place', 'User', 'Brand', 'Review', 'Location',
         'Segment', 'Behavior', 'Visit', 'Category', 'Region',
         'Score', 'H3Index', 'Embedding', 'Agent', 'Query'
     ];

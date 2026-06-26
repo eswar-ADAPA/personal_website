@@ -74,7 +74,7 @@
                 <li data-world="startup"><a href="#people">People</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="assets/docs/Eswar_Adapa_Resume_GenAI.pdf" class="nav-resume-btn" target="_blank">Resume <i class="fas fa-arrow-up-right-from-square"></i></a>
+            <a href="assets/docs/Eswar_Adapa_Resume.pdf" class="nav-resume-btn" target="_blank">Resume <i class="fas fa-arrow-up-right-from-square"></i></a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span><span></span><span></span>
             </button>
@@ -160,7 +160,7 @@ index.add(embeddings)
 D, I = index.search(query, k=5)</pre>
         </div>
         <div class="floating-code floating-code-4" aria-hidden="true">
-            <pre>MATCH (p:POI)-[:NEAR]->(q:POI)
+            <pre>MATCH (p:Place)-[:NEAR]->(q:Place)
 WHERE p.country = "IN"
 RETURN p.name, count(q)
 ORDER BY count(q) DESC</pre>
@@ -169,7 +169,7 @@ ORDER BY count(q) DESC</pre>
             <pre>spark.read.parquet("s3://data/")
   .filter(col("score") > 0.9)
   .groupBy("region")
-  .agg(count("poi_id"))</pre>
+  .agg(count("place_id"))</pre>
         </div>
 
         <!-- B: 3D Knowledge Graph Canvas -->
@@ -459,12 +459,13 @@ ORDER BY count(q) DESC</pre>
                         2+ years building scalable, production-grade AI systems end-to-end.
                     </p>
                     <p>
-                        My journey spans across <span class="highlight">Machine Learning</span>,
+                        My work spans <span class="highlight">Machine Learning</span>,
                         <span class="highlight">Big Data Engineering</span>,
                         <span class="highlight">Knowledge Graphs</span>, and <span class="highlight">Agentic AI</span>.
-                        I've scaled POI pipelines from 23M to 220M records across 38 countries,
-                        cut geospatial mapping from 1 week to 2.5 hours, and integrated an
-                        83M+ node knowledge graph with a LangGraph search agent.
+                        I've scaled large real-world datasets to <span class="highlight">220M+ records</span> across 38 countries,
+                        built an <span class="highlight">83M+ node knowledge graph</span> for reasoning over structured and
+                        unstructured data, and deployed multi-agent systems and an in-house LLM that power
+                        enterprise decision-making.
                     </p>
                     <p>
                         I graduated with a B.Tech (Honors) in Electronics and Communication Engineering from
@@ -536,6 +537,7 @@ ORDER BY count(q) DESC</pre>
                         <span class="tag">RAG</span>
                         <span class="tag">Graph RAG</span>
                         <span class="tag">Multi-Agent Systems</span>
+                        <span class="tag">MCP</span>
                         <span class="tag">Tool / Function Calling</span>
                         <span class="tag">Prompt Engineering</span>
                         <span class="tag">Guardrails</span>
@@ -613,6 +615,7 @@ ORDER BY count(q) DESC</pre>
                     <h3>Observability</h3>
                     <div class="skill-tags">
                         <span class="tag">Langfuse</span>
+                        <span class="tag">LangSmith</span>
                         <span class="tag">Datadog</span>
                         <span class="tag">New Relic</span>
                         <span class="tag">Loguru</span>
@@ -664,7 +667,7 @@ ORDER BY count(q) DESC</pre>
                         </svg>
                         <div class="donut-center">
                             <span class="donut-number">220M</span>
-                            <span class="donut-sub">POIs</span>
+                            <span class="donut-sub">Records</span>
                         </div>
                     </div>
                     <div class="dash-footer">Scaled from 23M to 220M records</div>
@@ -686,7 +689,7 @@ ORDER BY count(q) DESC</pre>
                             <div class="bar-label">After</div>
                         </div>
                     </div>
-                    <div class="dash-footer">Sherlock AI response latency</div>
+                    <div class="dash-footer">Multi-agent platform response latency</div>
                 </div>
 
                 <!-- Metric Card -->
@@ -702,7 +705,7 @@ ORDER BY count(q) DESC</pre>
                     <div class="metric-bar-track">
                         <div class="metric-bar-fill"></div>
                     </div>
-                    <div class="dash-footer">31% lower token cost · Sherlock AI</div>
+                    <div class="dash-footer">31% lower token cost · multi-agent platform</div>
                 </div>
             </div>
         </div>
@@ -732,31 +735,30 @@ ORDER BY count(q) DESC</pre>
                         </div>
 
                         <div class="project-card">
-                            <h4><i class="fas fa-database"></i> POI Ingestion & Data Scaling</h4>
+                            <h4><i class="fas fa-database"></i> Data Collection & Global Scaling</h4>
                             <ul>
-                                <li>Consolidated POI crawling, ingestion & validation pipelines (RabbitMQ, Redis, MongoDB, FastAPI), expanding coverage from <strong>23M POIs across 4 countries to 220M across 38 countries</strong></li>
-                                <li>Improved POI-type mapping accuracy from <strong>83% to 86.7%</strong>, replacing a 51-model LightGBM cascade with a unified <strong>DistilBERT</strong> trained on 2.5M POIs at 0.005s inference latency</li>
-                                <li>Cut geospatial error rates from <strong>18% to 14%</strong> via plus-code mappings and triangular normalization</li>
-                                <li>Shortened Point-to-Polygon mapping from <strong>1 week to 2.5 hours</strong> with Apache Sedona (partition-aware pre-join) and Apache Iceberg</li>
+                                <li>Consolidated crawling, ingestion & validation pipelines for real-world place data (stores, restaurants, landmarks) using <strong>RabbitMQ, Redis & MongoDB</strong>, expanding coverage from <strong>23M records across 4 countries to 220M across 38 countries</strong></li>
+                                <li>Containerized and scaled the pipeline on <strong>Kubernetes</strong> (Docker, Jenkins) for horizontal, fault-tolerant parallel processing</li>
+                                <li>Increased category-classification accuracy from <strong>83% to 86.7%</strong> by replacing a 51-model LightGBM cascade with a unified <strong>DistilBERT</strong> model trained on 2.5M records, at <strong>0.005s inference latency</strong></li>
+                                <li>Reduced geospatial error rates from <strong>18% to 14%</strong> via plus-code geocoding, and shortened point-in-polygon spatial-join runtime from <strong>1 week to 2.5 hours</strong> using <strong>Apache Sedona</strong> (partition-aware pre-join) and Iceberg</li>
                             </ul>
                         </div>
 
                         <div class="project-card">
-                            <h4><i class="fas fa-robot"></i> Sherlock Agentic Space: Multi-Agent Operations Platform</h4>
+                            <h4><i class="fas fa-project-diagram"></i> Knowledge Graph</h4>
                             <ul>
-                                <li>Migrated Sherlock AI from a monolithic LangChain Customer Success agent to a <strong>LangGraph multi-agent system</strong> with 7 specialists, tool calling, and persistent memory, achieving <strong>10x throughput</strong>, <strong>31% lower token cost</strong>, and responses from 8-12s to 3-5s</li>
-                                <li>Extended the platform into a suite of internal agents, Customer Success, Scrum Master, Sales, Marketing, HR, and Product, fronted by a single <strong>Flask dashboard</strong> with persona-routed search and RAG retrieval</li>
-                                <li>Strengthened agents with plan-aware guardrails, deterministic IDs, and an overlay model, driving <strong>12% higher customer retention</strong>, <strong>18% more qualified leads</strong>, and <strong>15% LinkedIn channel growth</strong></li>
+                                <li>Constructed a <strong>15-node-type, 14-relationship knowledge graph</strong> over <strong>83M+ records</strong> in Neo4j, enabling Graph RAG and reasoning across structured and unstructured enterprise data</li>
+                                <li>Generated multi-modal graph embeddings using <strong>Node2Vec, FastRP, HashGNN & GraphSAGE</strong> with KNN similarity (Graph Data Science), achieving <strong>8x speedup</strong> in person-data workflows and <strong>6&ndash;15x</strong> in place-data ingestion</li>
                             </ul>
                         </div>
 
                         <div class="project-card">
-                            <h4><i class="fas fa-project-diagram"></i> POI Knowledge Graph + LangGraph Search Agent</h4>
+                            <h4><i class="fas fa-robot"></i> Multi-Agent Workflow</h4>
                             <ul>
-                                <li>Constructed a <strong>15-node-type, 14-relationship Neo4j Knowledge Graph</strong> over 83M+ POIs, enabling Graph RAG and reasoning across structured and unstructured enterprise data</li>
-                                <li>Generated graph embeddings via <strong>Node2Vec, FastRP, HashGNN, and GraphSAGE</strong> (Graph Data Science), achieving <strong>8x speedup in person resolution</strong> and <strong>6&ndash;15x in POI ingestion</strong></li>
-                                <li>Integrated an <strong>autonomous LangGraph search agent</strong> over hybrid Graph + Vector RAG, served via a FastAPI SSE streaming chat with <strong>22 tools</strong> and a clarify-first protocol</li>
-                                <li>Monitored with Langfuse, Datadog & New Relic; deployed through Docker, Jenkins CI/CD, and Kubernetes</li>
+                                <li>Built and owned a <strong>LangGraph multi-agent platform</strong> that transforms proprietary consumer, location & business data into actionable intelligence through hybrid <strong>Graph + Vector RAG</strong> — including an <strong>autonomous planner&ndash;executor agent</strong> that dynamically orchestrates Trino, Neo4j, MCP servers, and enterprise data services to solve complex analytical tasks</li>
+                                <li>Pre-trained and deployed an <strong>in-house 1.5B LLM</strong> for brand, locality, category & intent understanding, improving entity-linking accuracy by <strong>~35%</strong> and outperforming <strong>GPT-4o</strong> on domain-specific benchmarks at <strong>sub-10ms p95 latency</strong></li>
+                                <li>Developed <strong>22+ agent tools</strong> with evaluation and observability frameworks (<strong>LangSmith, Datadog</strong>), deployed via FastAPI SSE, reducing debugging and issue-resolution time by <strong>~40%</strong></li>
+                                <li>Built AI agents for <strong>Customer Success, Sales & Marketing</strong> that automated client intelligence, lead qualification, and content-generation workflows, contributing to <strong>12% higher customer retention</strong> and <strong>18% more qualified sales leads</strong></li>
                             </ul>
                         </div>
                     </div>
@@ -1198,7 +1200,7 @@ ORDER BY count(q) DESC</pre>
                         <h4><i class="fas fa-store"></i> What I Built (the model)</h4>
                         <ul>
                             <li>A <strong>“dark kirana”</strong> model: use existing kirana shops as micro-fulfilment nodes, saving the <strong>5–10% of revenue</strong> quick-commerce burns on dedicated dark stores.</li>
-                            <li>Worked out detailed <strong>unit economics</strong> (cost-per-order, last-mile, margins), SKU strategy (<strong>90% of baskets in ~1,500 SKUs</strong>), and used <strong>Sherlock POI data</strong> on 14,325 grocery stores to map supply.</li>
+                            <li>Worked out detailed <strong>unit economics</strong> (cost-per-order, last-mile, margins), SKU strategy (<strong>90% of baskets in ~1,500 SKUs</strong>), and used <strong>place/location data</strong> on 14,325 grocery stores to map supply.</li>
                         </ul>
                     </div>
                     <div class="project-card">

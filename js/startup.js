@@ -75,15 +75,15 @@
         });
     });
 
-    // ---- initial mode (access-gate > hash > localStorage > technical) ----
+    // ---- initial mode (access-gate > hash > technical default) ----
+    // A fresh visit always lands on Technical world; only an explicit
+    // locked link or #startup hash opens Startup first.
     const access = window.SITE_ACCESS || 'all';
     let initial = 'technical';
     if (access === 'technical' || access === 'startup') {
         initial = access;                                    // locked link forces this world
     } else if (location.hash.toLowerCase() === '#startup') {
         initial = 'startup';
-    } else {
-        try { if (localStorage.getItem('siteMode') === 'startup') initial = 'startup'; } catch (e) {}
     }
     // set without smooth-scroll/animation flair on first paint
     setMode(initial, false);
